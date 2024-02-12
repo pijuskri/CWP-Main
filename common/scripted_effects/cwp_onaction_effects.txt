@@ -2,26 +2,16 @@
 	# Nuclear Calculations
 	if = {
 		limit = {
-			has_modifier = nuclear_capable
-			nuclear_stockpile_sv <= nuclear_stockpile_max
+			has_modifier = atomic_capable
 		}
 		change_variable = {
 			name = nuclear_stockpile
-			add = nuclear_stockpile_growth
+			add = nuclear_stockpile_sum
 		}
-		change_variable = {
+		clamp_variable = {
 			name = nuclear_stockpile
-			subtract = nuclear_stockpile_decay
-		}
-	}
-	if = {
-		limit = {
-			has_modifier = nuclear_capable
-			nuclear_stockpile_sv >= nuclear_stockpile_max
-		}
-		change_variable = {
-			name = nuclear_stockpile
-			subtract = nuclear_stockpile_decay
+			max = 9999999999
+			min = 0
 		}
 	}
 }
@@ -316,7 +306,6 @@ onaction_currency_calculation_annex = {
 				value = 2
 			}
 		}
-		
 	}
 	if = {
 		limit = {
@@ -336,7 +325,6 @@ onaction_currency_calculation_annex = {
 				multiplier = 2
 			}
 		}
-		
 	}
 	if = {
 		limit = {
@@ -351,7 +339,6 @@ onaction_currency_calculation_annex = {
 		scope:target = {
 			set_variable = stable_monetary_policy
 		}
-		
 	}
 	if = {
 		limit = {
@@ -447,7 +434,6 @@ onaction_monetary_variables_creation = {
 			}
 		}
 		set_variable = stable_monetary_policy
-		
 	}
 	if = {
 		limit = {
@@ -477,7 +463,6 @@ onaction_monetary_variables_creation = {
 	}
 }
 
-
 onaction_palestine = {
 	if = {
 		limit = {
@@ -491,8 +476,8 @@ onaction_palestine = {
 			}
 		}
 		s:STATE_PALESTINE = {
-			add_homeland = sephardic
-			add_homeland = ashkenazi
+			add_homeland = cu:sephardic
+			add_homeland = cu:ashkenazi
 		}
 	}
 }
@@ -503,6 +488,7 @@ onaction_skyscraper_modifier = {
 		name = state_skyscraper_modifier
 		multiplier = {
 			value = total_urbanization
+			add = 500 #You can always build at least one level of office in state.
 			divide = 1000
 			round = yes
 		}
@@ -519,7 +505,7 @@ onaction_slums_modifier = {
 		remove_modifier = state_slum_modifier
 		add_modifier = {
 			name = state_slum_modifier
-			multiplier = { 
+			multiplier = {
 				value = state_max_slums
 				round = yes
 				max = 100
@@ -678,6 +664,11 @@ onaction_update_party_morale = {
 						name = agrarian_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = agrarian_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -700,6 +691,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = anarchist_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = anarchist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -724,6 +720,11 @@ onaction_update_party_morale = {
 						name = centrist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = centrist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -746,6 +747,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = christian_democrat_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = christian_democrat_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -770,6 +776,11 @@ onaction_update_party_morale = {
 						name = communist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = communist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -792,6 +803,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = conservative_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = conservative_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -816,6 +832,11 @@ onaction_update_party_morale = {
 						name = democratic_socialist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = democratic_socialist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -838,6 +859,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = fascist_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = fascist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -862,6 +888,11 @@ onaction_update_party_morale = {
 						name = feminist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = feminist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -884,6 +915,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = green_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = green_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -908,6 +944,11 @@ onaction_update_party_morale = {
 						name = islamist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = islamist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -930,6 +971,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = liberal_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = liberal_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -954,6 +1000,11 @@ onaction_update_party_morale = {
 						name = libertarian_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = libertarian_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -976,6 +1027,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = monarchist_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = monarchist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1000,6 +1056,11 @@ onaction_update_party_morale = {
 						name = pacifist_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = pacifist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1023,6 +1084,11 @@ onaction_update_party_morale = {
 						name = social_democrat_party_morale
 						add = 1
 					}
+					clamp_variable = {
+						name = social_democrat_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1045,6 +1111,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = socialist_party_morale
 						add = 1
+					}
+					clamp_variable = {
+						name = socialist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1075,6 +1146,11 @@ onaction_update_party_morale = {
 						name = agrarian_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = agrarian_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1097,6 +1173,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = anarchist_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = anarchist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1121,6 +1202,11 @@ onaction_update_party_morale = {
 						name = centrist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = centrist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1143,6 +1229,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = christian_democrat_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = christian_democrat_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1167,6 +1258,11 @@ onaction_update_party_morale = {
 						name = communist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = communist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1189,6 +1285,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = conservative_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = conservative_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1213,6 +1314,11 @@ onaction_update_party_morale = {
 						name = democratic_socialist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = democratic_socialist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1235,6 +1341,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = fascist_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = fascist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1259,6 +1370,11 @@ onaction_update_party_morale = {
 						name = feminist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = feminist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1281,6 +1397,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = green_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = green_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1305,6 +1426,11 @@ onaction_update_party_morale = {
 						name = islamist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = islamist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1327,6 +1453,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = liberal_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = liberal_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1351,6 +1482,11 @@ onaction_update_party_morale = {
 						name = libertarian_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = libertarian_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1373,6 +1509,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = monarchist_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = monarchist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {
@@ -1397,6 +1538,11 @@ onaction_update_party_morale = {
 						name = pacifist_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = pacifist_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1420,6 +1566,11 @@ onaction_update_party_morale = {
 						name = social_democrat_party_morale
 						add = -1
 					}
+					clamp_variable = {
+						name = social_democrat_party_morale
+						max = max_party_morale
+						min = min_party_morale
+					}
 				}
 				else = {
 					set_variable = {
@@ -1442,6 +1593,11 @@ onaction_update_party_morale = {
 					change_variable = {
 						name = socialist_party_morale
 						add = -1
+					}
+					clamp_variable = {
+						name = socialist_party_morale
+						max = max_party_morale
+						min = min_party_morale
 					}
 				}
 				else = {

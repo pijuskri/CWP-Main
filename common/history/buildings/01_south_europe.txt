@@ -7,8 +7,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -17,10 +17,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_mechanized_harvesting"
+					"pm_privately_owned_farm"
 					"pm_fertilizers"
-					"pm_no_honey_production"
-					"pm_citrus_orchards"
-					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -28,11 +26,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_open_air_stockyards"
 				}
 			}
 			create_building = {
@@ -263,10 +261,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -274,11 +270,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -447,7 +443,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -471,8 +466,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -538,11 +533,10 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_semi_automatic_rifles"
-					"pm_privately_owned_military_industry"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_pre_war_artillery_prod"
+					"pm_privately_owned_military_industry"
 				}
 			}
 			create_building = {
@@ -558,21 +552,7 @@
 					"pm_pre_war_ammunition"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_tanks"
-					"pm_post_war_infantry"
-					"pm_radio_posts"
-					"pm_no_motorized"
-					"pm_pre_war_artillery"
-					"pm_no_special_reconnaissance"
-					"pm_no_formal_medical_support"
-					"pm_pre_war_military_aircraft"
-				}
-			}
+			
 			create_building = {
 				building = "building_automobile_manufactories"
 				level = 1
@@ -607,9 +587,9 @@
 				activate_production_methods = {
 					"pm_traditional_financial_services"
 					"pm_no_commercial_banking"
-					"pm_no_investment_services"
-					"pm_professional_service_industry_no"
 					"pm_privately_owned_urban_center"
+					"pm_professional_service_industry_no"
+					"pm_certified_investors"
 				}
 			}
 		}
@@ -622,10 +602,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -800,10 +778,51 @@
 		region_state:MLT = {
 			create_building = {
 				building = "building_port"
-				level = 1
+				level = 2
 				reserves = 1
 				activate_production_methods = {
 					"pm_anchorage"
+				}
+			}
+			create_building = {
+				building = "building_fishing_wharf"
+				level = 2
+				reserves = 1
+				activate_production_methods = {
+					"pm_simple_fishing"
+					"pm_privately_owned_general_industry"
+					"pm_traditional_packaging_fishing"
+					"pm_pre_war_whaling_ships"
+				}
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				level = 1
+				reserves = 1
+				activate_production_methods = {
+					"pm_butchering_tools"
+					"pm_privately_owned_farm"
+					"pm_standard_fences"
+					"pm_unrefrigerated"
+					"pm_open_air_stockyards"
+				}
+			}
+			create_building = {
+				building = "building_wheat_farm"
+				level = 1
+				reserves = 1
+				activate_production_methods = {
+					"pm_simple_farming"
+					"pm_manual_harvesting"
+					"pm_privately_owned_farm"
+				}
+			}
+			create_building = {
+				building = "building_construction_sector"
+				level = 1
+				reserves = 1
+				activate_production_methods = {
+					"pm_pre_industrial_buildings"
 				}
 			}
 		}
@@ -816,10 +835,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -963,7 +980,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -1005,7 +1021,7 @@
 					"pm_default_building_sugar_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1014,10 +1030,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1025,11 +1039,11 @@
 				level = 6
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1040,7 +1054,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1138,8 +1152,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -1193,24 +1207,10 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_post_war_infantry"
-					"pm_pre_war_artillery"
-					"pm_pre_war_tanks"
-					"pm_no_motorized"
-					"pm_pre_war_military_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_radio_posts"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 			create_building = {
 				building = "building_bauxite_mine"
 				level = 1
@@ -1234,7 +1234,7 @@
 					"pm_default_building_sugar_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1254,10 +1254,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1265,11 +1263,11 @@
 				level = 3
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1454,10 +1452,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1465,11 +1461,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1480,7 +1476,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1589,7 +1585,7 @@
 					"pm_default_building_sugar_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1625,10 +1621,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1715,7 +1709,7 @@
 					"pm_default_building_sugar_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -1767,28 +1761,13 @@
 					"pm_prefabricated_buildings"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_post_war_infantry"
-					"pm_pre_war_artillery"
-					"pm_main_battle_tanks"
-					"pm_no_formal_medical_support"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_motorized"
-				}
-			}
+			
 			create_building = {
 				building = "building_small_arms_manufactories"
 				level = 1
 				reserves = 1
 				activate_production_methods = {
 					"pm_semi_automatic_rifles"
-					"pm_no_artillery_prod"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -1828,10 +1807,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -1964,8 +1941,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -1984,7 +1961,7 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2056,10 +2033,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -2136,8 +2111,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -2148,7 +2123,7 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2210,7 +2185,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2218,11 +2193,11 @@
 				level = 1
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_government_run_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -2261,10 +2236,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -2353,8 +2326,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -2435,7 +2408,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 		}
@@ -2468,8 +2441,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -2487,10 +2460,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -2501,7 +2472,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2595,21 +2566,7 @@
 					"pm_professional_bureaucrats"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_post_war_infantry"
-					"pm_pre_war_artillery"
-					"pm_pre_war_tanks"
-					"pm_no_motorized"
-					"pm_pre_war_military_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_radio_posts"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 			create_building = {
 				building = "building_tool_manufactories"
 				level = 9
@@ -2629,7 +2586,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -2655,7 +2611,7 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2689,7 +2645,7 @@
 				activate_production_methods = {
 					"pm_traditional_financial_services"
 					"pm_no_commercial_banking"
-					"pm_no_investment_services"
+					"pm_certified_investors"
 					"pm_professional_service_industry_no"
 					"pm_privately_owned_urban_center"
 				}
@@ -2704,10 +2660,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -2877,7 +2831,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -2926,8 +2879,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_higher_education"
-					"pm_state_directed_research"
-					"pm_religious_faculty"
+					"pm_independent_research_focus"
+					"pm_secular_faculty"
 				}
 			}
 			create_building = {
@@ -2946,7 +2899,7 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -2961,32 +2914,7 @@
 					"pm_privately_owned_military_industry"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_post_war_infantry"
-					"pm_pre_war_artillery"
-					"pm_pre_war_tanks"
-					"pm_no_motorized"
-					"pm_pre_war_military_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_radio_posts"
-					"pm_no_formal_medical_support"
-				}
-			}
-			create_building = {
-				building = "building_naval_base"
-				level = 4
-				reserves = 1
-				activate_production_methods = {
-					"pm_naval_command"
-					"pm_wartime_escort_ships"
-					"pm_wartime_cruisers"
-					"pm_no_attack_submarines"
-				}
-			}
+		
 			create_building = {
 				building = "building_logging_camp"
 				level = 3
@@ -3029,7 +2957,7 @@
 				activate_production_methods = {
 					"pm_traditional_financial_services"
 					"pm_no_commercial_banking"
-					"pm_no_investment_services"
+					"pm_certified_investors"
 					"pm_professional_service_industry_no"
 					"pm_privately_owned_urban_center"
 				}
@@ -3067,10 +2995,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_government_run_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -3081,7 +3007,7 @@
 					"pm_default_building_sugar_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -3092,7 +3018,7 @@
 					"pm_default_building_silk_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_government_run_plantation"
+					"pm_privately_owned_plantation"
 				}
 			}
 			create_building = {
@@ -3204,21 +3130,7 @@
 					"pm_prefabricated_buildings"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_post_war_infantry"
-					"pm_pre_war_artillery"
-					"pm_pre_war_tanks"
-					"pm_no_motorized"
-					"pm_pre_war_military_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_radio_posts"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 			create_building = {
 				building = "building_logging_camp"
 				level = 4
@@ -3263,11 +3175,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_simple_ranch"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_privately_owned_farm"
+					"pm_simple_ranch"
 				}
 			}
 			create_building = {
@@ -3280,15 +3192,15 @@
 			}
 			create_building = {
 				building = "building_explosives_industry"
-				level = 2
+				level = 3
 				reserves = 1
 				activate_production_methods = {
+					"pm_rudimentary_explosives"
 					"pm_privately_owned_military_industry"
-					"pm_no_ammo"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_plastic_explosives"
+					"pm_pre_war_ammunition"
 				}
 			}
 			create_building = {
@@ -3358,10 +3270,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_simple_farming"
-					"pm_privately_owned_farm"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
-					"pm_citrus_orchards"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -3408,19 +3318,6 @@
 				}
 			}
 			create_building = {
-				building = "building_explosives_industry"
-				level = 3
-				reserves = 1
-				activate_production_methods = {
-					"pm_rudimentary_explosives"
-					"pm_privately_owned_military_industry"
-					"pm_no_automation"
-					"pm_professional_service_industry_no"
-					"pm_no_environmental_tech"
-					"pm_pre_war_ammunition"
-				}
-			}
-			create_building = {
 				building = "building_motor_industry"
 				level = 4
 				reserves = 1
@@ -3463,19 +3360,10 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
 					"pm_privately_owned_general_industry"
-				}
-			}
-			create_building = {
-				building = "building_construction_sector"
-				level = 6
-				reserves = 1
-				activate_production_methods = {
-					"pm_prefabricated_buildings"
 				}
 			}
 		}
@@ -3572,7 +3460,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -3618,9 +3505,7 @@
 				level = 10
 				reserves = 1
 				activate_production_methods = {
-					"pm_no_secondary"
 					"pm_privately_owned_farm"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_fertilizers"
 				}
@@ -3704,8 +3589,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_privately_owned_farm"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_fertilizers"
 				}
@@ -3753,8 +3636,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -3857,8 +3738,8 @@
 				level = 3
 				reserves = 1
 				activate_production_methods = {
-					"pm_privately_owned_farm"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_open_air_stockyards"
@@ -3881,8 +3762,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -4000,8 +3879,8 @@
 				level = 4
 				reserves = 1
 				activate_production_methods = {
-					"pm_privately_owned_farm"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_open_air_stockyards"
@@ -4035,8 +3914,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -4058,12 +3935,12 @@
 				level = 6
 				reserves = 1
 				activate_production_methods = {
+					"pm_rudimentary_explosives"
 					"pm_privately_owned_military_industry"
-					"pm_no_ammo"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_plastic_explosives"
+					"pm_no_ammo"
 				}
 			}
 			create_building = {
@@ -4291,8 +4168,8 @@
 				level = 6
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_privately_owned_farm"
@@ -4361,8 +4238,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -4597,8 +4472,8 @@
 				level = 15
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_privately_owned_farm"
@@ -4770,21 +4645,7 @@
 					"pm_professional_bureaucrats"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_artillery"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 			create_building = {
 				building = "building_lead_mine"
 				level = 1
@@ -4856,8 +4717,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_privately_owned_farm"
 					"pm_fertilizers"
 				}
@@ -5038,8 +4897,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -5172,7 +5029,6 @@
 				activate_production_methods = {
 					"pm_modern_medicine"
 					"pm_no_opiates"
-					"pm_no_recreational_drug_production"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -5219,11 +5075,10 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_semi_automatic_rifles"
-					"pm_privately_owned_military_industry"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_pre_war_artillery_prod"
+					"pm_privately_owned_military_industry"
 				}
 			}
 			create_building = {
@@ -5239,21 +5094,7 @@
 					"pm_pre_war_ammunition"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_formal_medical_support"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_pre_war_artillery"
-				}
-			}
+			
 			create_building = {
 				building = "building_university"
 				level = 8
@@ -5301,8 +5142,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -5452,7 +5291,7 @@
 				level = 4
 				reserves = 1
 				activate_production_methods = {
-					"pm_slaughterhouses"
+					"pm_butchering_tools"
 					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
@@ -5492,10 +5331,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_mechanized_harvesting"
-					"pm_no_honey_production"
 					"pm_privately_owned_farm"
-					"pm_citrus_orchards"
+					"pm_mechanized_harvesting"
 				}
 			}
 			create_building = {
@@ -5699,11 +5536,11 @@
 				level = 1
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_privately_owned_farm"
+					"pm_open_air_stockyards"
 				}
 			}
 			create_building = {
@@ -5838,8 +5675,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_simple_farming"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_government_run_farm"
 				}
@@ -5866,9 +5701,7 @@
 				subsidized = yes
 				reserves = 1
 				activate_production_methods = {
-					"pm_citrus_orchards"
 					"pm_fertilizers"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_government_run_farm"
 				}
@@ -5879,8 +5712,8 @@
 				subsidized = yes
 				reserves = 1
 				activate_production_methods = {
-					"pm_intensive_grazing_ranch"
 					"pm_butchering_tools"
+					"pm_intensive_grazing_ranch"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_government_run_farm"
@@ -6026,10 +5859,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_fertilizers"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6040,7 +5871,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6063,7 +5894,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -6083,7 +5914,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6098,7 +5929,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6110,7 +5941,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -6121,7 +5952,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_worker_cooperatives_plantation"
+					"pm_government_run_plantation"
 				}
 			}
 		}
@@ -6137,7 +5968,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6145,9 +5976,9 @@
 				level = 3
 				reserves = 1
 				activate_production_methods = {
-					"pm_modern_bureaucracy"
-					"pm_professional_service_industry_no"
 					"pm_professional_bureaucrats"
+					"pm_professional_service_industry_no"
+					"pm_modern_bureaucracy"
 				}
 			}
 			create_building = {
@@ -6157,10 +5988,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_simple_farming"
-					"pm_privately_owned_farm"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
-					"pm_no_secondary"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6179,7 +6008,7 @@
 					"pm_steam_trains"
 					"pm_paved_roads"
 					"pm_cargo_prioritization"
-					"pm_privately_owned_building_railway"
+					"pm_government_run_building_railway"
 				}
 			}
 			create_building = {
@@ -6190,7 +6019,7 @@
 					"pm_manual_resource_extraction_copper"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_privately_owned_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6201,7 +6030,7 @@
 					"pm_manual_resource_extraction_iron"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_privately_owned_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6212,7 +6041,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_privately_owned_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6224,7 +6053,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_privately_owned_plantation"
+					"pm_government_run_plantation"
 				}
 			}
 			create_building = {
@@ -6236,7 +6065,7 @@
 					"pm_default_building_tobacco_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_privately_owned_plantation"
+					"pm_government_run_plantation"
 				}
 			}
 			create_building = {
@@ -6253,7 +6082,7 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_airfield"
-					"pm_privately_owned_airport"
+					"pm_government_run_airport"
 				}
 			}
 		}
@@ -6269,7 +6098,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6289,10 +6118,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_simple_farming"
-					"pm_no_secondary"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
-					"pm_privately_owned_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6323,7 +6150,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6335,7 +6162,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6350,7 +6177,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6359,11 +6186,10 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_semi_automatic_rifles"
-					"pm_no_artillery_prod"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_privately_owned_military_industry"
+					"pm_government_run_military_industry"
 				}
 			}
 			create_building = {
@@ -6374,7 +6200,7 @@
 					"pm_manual_resource_extraction_copper"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_privately_owned_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6385,7 +6211,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_privately_owned_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6397,7 +6223,7 @@
 					"pm_default_building_cotton_plantation"
 					"pm_manual_harvesting_plantation"
 					"pm_no_transport_plantation"
-					"pm_privately_owned_plantation"
+					"pm_government_run_plantation"
 				}
 			}
 			create_building = {
@@ -6408,7 +6234,7 @@
 					"pm_steam_trains"
 					"pm_paved_roads"
 					"pm_cargo_prioritization"
-					"pm_privately_owned_building_railway"
+					"pm_government_run_building_railway"
 				}
 			}
 		}
@@ -6433,7 +6259,7 @@
 					"pm_manual_resource_extraction_coal"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6441,11 +6267,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6454,10 +6280,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_worker_cooperatives_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_citrus_orchards"
+					"pm_government_run_farm"
 				}
 			}
 		}
@@ -6482,7 +6306,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6490,11 +6314,11 @@
 				level = 2
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6514,10 +6338,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_worker_cooperatives_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_citrus_orchards"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6529,7 +6351,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6562,7 +6384,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6573,7 +6395,7 @@
 					"pm_manual_resource_extraction_coal"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6581,11 +6403,11 @@
 				level = 5
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6605,10 +6427,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6639,10 +6459,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6653,7 +6471,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6661,11 +6479,11 @@
 				level = 6
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 		}
@@ -6698,11 +6516,11 @@
 				level = 2
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -6711,21 +6529,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_worker_cooperatives_farm"
-				}
-			}
-			create_building = {
-				building = "building_railway"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_steam_trains"
-					"pm_paved_roads"
-					"pm_cargo_prioritization"
-					"pm_government_run_building_railway"
+					"pm_privately_owned_farm"
 				}
 			}
 			create_building = {
@@ -6756,10 +6561,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_worker_cooperatives_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6770,7 +6573,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6815,7 +6618,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6824,10 +6627,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_worker_cooperatives_farm"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_no_secondary"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -6839,7 +6640,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -6850,7 +6651,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6863,7 +6664,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -6874,7 +6675,7 @@
 					"pm_manual_resource_extraction_iron"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -6886,7 +6687,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -6937,7 +6738,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6952,7 +6753,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -6965,7 +6766,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 		}
@@ -6981,7 +6782,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -7000,10 +6801,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_mechanized_harvesting"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -7014,7 +6813,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -7025,7 +6824,7 @@
 					"pm_manual_resource_extraction_coal"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -7054,11 +6853,11 @@
 				level = 3
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
-					"pm_worker_cooperatives_farm"
+					"pm_government_run_farm"
 				}
 			}
 			create_building = {
@@ -7070,7 +6869,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_heavy_industry"
+					"pm_government_run_heavy_industry"
 				}
 			}
 			create_building = {
@@ -7093,7 +6892,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 			create_building = {
@@ -7104,7 +6903,7 @@
 					"pm_manual_resource_extraction_lead"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 		}
@@ -7151,10 +6950,8 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_privately_owned_farm"
-					"pm_fertilizers"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
-					"pm_citrus_orchards"
+					"pm_fertilizers"
 				}
 			}
 			create_building = {
@@ -7189,8 +6986,8 @@
 				level = 2
 				reserves = 1
 				activate_production_methods = {
-					"pm_privately_owned_farm"
 					"pm_butchering_tools"
+					"pm_privately_owned_farm"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_open_air_stockyards"
@@ -7247,21 +7044,7 @@
 					"pm_privately_owned_mine"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_artillery"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 			create_building = {
 				building = "building_tool_manufactories"
 				level = 1
@@ -7280,7 +7063,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_semi_automatic_rifles"
-					"pm_no_artillery_prod"
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
@@ -7307,8 +7089,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -7337,8 +7117,8 @@
 				level = 4
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_privately_owned_farm"
@@ -7355,21 +7135,7 @@
 					"pm_privately_owned_mine"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_artillery"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 		}
 	}
 	s:STATE_SKOPIA = {
@@ -7392,7 +7158,7 @@
 					"pm_simple_forestry"
 					"pm_no_equipment"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -7403,7 +7169,7 @@
 					"pm_manual_resource_extraction_iron"
 					"pm_traditional_tools"
 					"pm_manual_transportation"
-					"pm_worker_cooperatives_mine"
+					"pm_government_run_mine"
 				}
 			}
 			create_building = {
@@ -7435,7 +7201,7 @@
 					"pm_no_automation"
 					"pm_professional_service_industry_no"
 					"pm_no_environmental_tech"
-					"pm_worker_cooperatives_general_industry"
+					"pm_government_run_general_industry"
 				}
 			}
 		}
@@ -7458,8 +7224,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -7488,8 +7252,8 @@
 				level = 3
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_privately_owned_farm"
@@ -7506,21 +7270,7 @@
 					"pm_privately_owned_mine"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_artillery"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 		}
 	}
 	s:STATE_WESTERN_THRACE = {
@@ -7531,8 +7281,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -7542,8 +7290,8 @@
 				level = 4
 				reserves = 1
 				activate_production_methods = {
-					"pm_open_air_stockyards"
 					"pm_butchering_tools"
+					"pm_open_air_stockyards"
 					"pm_standard_fences"
 					"pm_unrefrigerated"
 					"pm_privately_owned_farm"
@@ -7571,21 +7319,7 @@
 					"pm_privately_owned_mine"
 				}
 			}
-			create_building = {
-				building = "building_barracks"
-				level = 1
-				reserves = 1
-				activate_production_methods = {
-					"pm_pre_war_infantry"
-					"pm_no_artillery"
-					"pm_no_armoured_integration"
-					"pm_no_motorized"
-					"pm_no_aircraft"
-					"pm_no_special_reconnaissance"
-					"pm_no_communications_support"
-					"pm_no_formal_medical_support"
-				}
-			}
+			
 		}
 	}
 	s:STATE_IONIAN_ISLANDS = {
@@ -7596,8 +7330,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}
@@ -7612,8 +7344,6 @@
 				reserves = 1
 				activate_production_methods = {
 					"pm_fertilizers"
-					"pm_citrus_orchards"
-					"pm_no_honey_production"
 					"pm_manual_harvesting"
 					"pm_privately_owned_farm"
 				}

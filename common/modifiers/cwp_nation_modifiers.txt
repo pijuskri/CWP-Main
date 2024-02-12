@@ -1,9 +1,3 @@
-﻿nuclear_capable = {
-	icon = gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds
-	state_building_nuclear_weapons_facility_max_level_add = 1
-	country_prestige_mult = 0.1
-}
-
 full_investment_pool = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_academics_investment_pool_contribution_add = -0.001
@@ -173,4 +167,14 @@ petain_on_house_arrest = {
 petain_executed = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
 	interest_group_ig_patriots_pop_attraction_mult = -0.2
+}
+
+approves_gaddafis_unification_efforts = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 3
+}
+
+approves_gaddafis_unification_efforts_leader = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	character_popularity_add = 50
 }

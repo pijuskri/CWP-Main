@@ -1,5 +1,6 @@
 Includes = {
 	"cw/pdxmesh.fxh"
+	"cw/pdxmesh_buffers.fxh"
 	"cw/terrain.fxh"
 	"cw/utility.fxh"
 	"cw/curve.fxh"
@@ -16,7 +17,7 @@ Includes = {
 	"sharedconstants.fxh"
 	"fog_of_war.fxh"
 	"distance_fog.fxh"
-	"cwp_coloroverlay.fxh"
+	"coloroverlay.fxh"
 	"ssao_struct.fxh"
 	"constants_ig_colors.fxh"
 }
@@ -32,6 +33,7 @@ PixelShader =
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
 	}
+
 	TextureSampler PropertiesMap
 	{
 		Ref = PdxTexture1
@@ -41,6 +43,7 @@ PixelShader =
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
 	}
+
 	TextureSampler NormalMap
 	{
 		Ref = PdxTexture2
@@ -50,25 +53,7 @@ PixelShader =
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
 	}
-	TextureSampler EnvironmentMap
-	{
-		Ref = JominiEnvironmentMap
-		MagFilter = "Linear"
-		MinFilter = "Linear"
-		MipFilter = "Linear"
-		SampleModeU = "Clamp"
-		SampleModeV = "Clamp"
-		Type = "Cube"
-	}
-	TextureSampler UniqueMap
-	{
-		Index = 5
-		MagFilter = "Linear"
-		MinFilter = "Linear"
-		MipFilter = "Linear"
-		SampleModeU = "Wrap"
-		SampleModeV = "Wrap"
-	}
+
 	TextureSampler ShadowMap
 	{
 		Ref = PdxShadowmap
@@ -80,6 +65,63 @@ PixelShader =
 		CompareFunction = less_equal
 		SamplerType = "Compare"
 	}
+
+	TextureSampler EnvironmentMap
+	{
+		Ref = JominiEnvironmentMap
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Clamp"
+		SampleModeV = "Clamp"
+		Type = "Cube"
+	}
+	TextureSampler TintMap
+	{
+		Index = 5
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+	}
+
+	TextureSampler ChannelMaskMap
+	{
+		Index = 6
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+	}
+
+	TextureSampler FlagTexture
+	{
+		Ref = PdxMeshCustomTexture0
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+	}
+
+	BufferTexture CountryUnitColorBuffer01
+	{
+		Ref = CountryUnitColors01
+		type = float4
+	}
+	BufferTexture CountryUnitColorBuffer02
+	{
+		Ref = CountryUnitColors02
+		type = float4
+	}
+	BufferTexture CountryUnitColorBuffer03
+	{
+		Ref = CountryUnitColors03
+		type = float4
+	}
+
 }
 
 VertexStruct VS_OUTPUT
@@ -93,15 +135,6 @@ VertexStruct VS_OUTPUT
 	float3 WorldSpacePos	: TEXCOORD5;
 	uint InstanceIndex 	: TEXCOORD6;
 };
-
-Code
-[[
-	uint GetUserDataUint( uint InstanceIndex )
-	{
-		return uint( Data[ InstanceIndex + PDXMESH_USER_DATA_OFFSET + 0 ].x );
-	}
-]]
-
 
 VertexShader =
 {
@@ -180,7 +213,6 @@ VertexShader =
 		]]
 	}
 
-
 	MainCode VS_mapobject
 	{
 		Input = "VS_INPUT_PDXMESH_MAPOBJECT"
@@ -255,26 +287,34 @@ VertexShader =
 				float4 Position = float4( Input.Position.xyz, 1.0 );
 				float4x4 WorldMatrix = PdxMeshGetWorldMatrix( Input.InstanceIndices.y );
 
-				// Reset Rotation
-				WorldMatrix[0][0] = 1;
-				WorldMatrix[0][1] = 0;
-				WorldMatrix[0][2] = 0;
-				WorldMatrix[1][0] = 0;
-				WorldMatrix[1][1] = 1;
-				WorldMatrix[1][2] = 0;
-				WorldMatrix[2][0] = 0;
-				WorldMatrix[2][1] = 0;
-				WorldMatrix[2][2] = 1;
-
 				// Wave animation
-				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, float3( GetMatrixData( WorldMatrix, 0, 3 ), GetMatrixData( WorldMatrix, 1, 3 ), GetMatrixData( WorldMatrix, 2, 3 ) ) );
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndices.y );
+				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, UserData._RandomValue );
 
 				Out.Normal = normalize( mul( CastTo3x3( WorldMatrix ), Input.Normal ) );
 				Out.Tangent = normalize( mul( CastTo3x3( WorldMatrix ), Input.Tangent ) );
 				Out.Bitangent = normalize( cross( Out.Normal, Out.Tangent ) * Input.Tangent.w );
-				Out.Position = mul( WorldMatrix, Position );
+
+				#ifdef PDX_MESH_SKINNED
+					int JointsInstanceIndex =  Input.InstanceIndices.x;
+					float4 vWeight = float4( Input.BoneWeight.xyz, 1.0 - Input.BoneWeight.x - Input.BoneWeight.y - Input.BoneWeight.z );
+					float4 vSkinnedPosition = vec4( 0.0 );
+					for( int i = 0; i < PDXMESH_MAX_INFLUENCE; ++i )
+					{
+						int nIndex = int( Input.BoneIndex[i] );
+						float4x4 VertexMatrix = PdxMeshGetJointVertexMatrix( nIndex + JointsInstanceIndex );
+						vSkinnedPosition += mul( VertexMatrix, Position ) * vWeight[ i ];
+					}
+					Out.Position = mul( WorldMatrix, vSkinnedPosition );
+				#else
+					Out.Position = mul( WorldMatrix, Position );
+
+					#ifdef PDX_MESH_SNAP_VERTICES_TO_TERRAIN
+						Out.Position.xyz = SnapVerticesToTerrain( Out.Position.xz, Input.Position.y, WorldMatrix );
+					#endif
+				#endif
+
 				Out.WorldSpacePos = Out.Position.xyz;
-				Out.WorldSpacePos /= WorldMatrix[3][3];
 				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, Out.Position );
 
 				Out.UV0 = Input.UV0;
@@ -299,21 +339,29 @@ VertexShader =
 				float4 Position = float4( Input.Position.xyz, 1.0 );
 				float4x4 WorldMatrix = PdxMeshGetWorldMatrix( Input.InstanceIndices.y );
 
-				// Reset Rotation
-				WorldMatrix[0][0] = 1;
-				WorldMatrix[0][1] = 0;
-				WorldMatrix[0][2] = 0;
-				WorldMatrix[1][0] = 0;
-				WorldMatrix[1][1] = 1;
-				WorldMatrix[1][2] = 0;
-				WorldMatrix[2][0] = 0;
-				WorldMatrix[2][1] = 0;
-				WorldMatrix[2][2] = 1;
-
 				// Wave Animation
-				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, float3( GetMatrixData( WorldMatrix, 3, 0 ), GetMatrixData( WorldMatrix, 3, 1 ), GetMatrixData( WorldMatrix, 3, 2 ) ) );
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndices.y );
+				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, UserData._RandomValue );
 
-				Out.Position = mul( WorldMatrix, Position );
+				#ifdef PDX_MESH_SKINNED
+					int JointsInstanceIndex =  Input.InstanceIndices.x;
+					float4 vWeight = float4( Input.BoneWeight.xyz, 1.0 - Input.BoneWeight.x - Input.BoneWeight.y - Input.BoneWeight.z );
+					float4 vSkinnedPosition = vec4( 0.0 );
+					for( int i = 0; i < PDXMESH_MAX_INFLUENCE; ++i )
+					{
+						int nIndex = int( Input.BoneIndex[i] );
+						float4x4 VertexMatrix = PdxMeshGetJointVertexMatrix( nIndex + JointsInstanceIndex );
+						vSkinnedPosition += mul( VertexMatrix, Position ) * vWeight[ i ];
+					}
+					Out.Position = mul( WorldMatrix, vSkinnedPosition );
+				#else
+					Out.Position = mul( WorldMatrix, Position );
+
+					#ifdef PDX_MESH_SNAP_VERTICES_TO_TERRAIN
+						Out.Position.xyz = SnapVerticesToTerrain( Out.Position.xz, Input.Position.y, WorldMatrix );
+					#endif
+				#endif
+
 				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, Out.Position );
 				Out.UV_InstanceIndex.xy = Input.UV0;
 				Out.UV_InstanceIndex.z = Input.InstanceIndices.y;
@@ -336,26 +384,18 @@ VertexShader =
 				float4 Position = float4( Input.Position.xyz, 1.0 );
 				float4x4 WorldMatrix = UnpackAndGetMapObjectWorldMatrix( Input.InstanceIndex24_Opacity8 );
 
-				// Reset Rotation
-				WorldMatrix[0][0] = 1;
-				WorldMatrix[0][1] = 0;
-				WorldMatrix[0][2] = 0;
-				WorldMatrix[1][0] = 0;
-				WorldMatrix[1][1] = 1;
-				WorldMatrix[1][2] = 0;
-				WorldMatrix[2][0] = 0;
-				WorldMatrix[2][1] = 0;
-				WorldMatrix[2][2] = 1;
-
 				// Wave animation
-				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, float3( GetMatrixData( WorldMatrix, 0, 3 ), GetMatrixData( WorldMatrix, 1, 3 ), GetMatrixData( WorldMatrix, 2, 3 ) ) );
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex24_Opacity8 );
+				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, UserData._RandomValue );
 
 				Out.Normal = normalize( mul( CastTo3x3( WorldMatrix ), Input.Normal ) );
 				Out.Tangent = normalize( mul( CastTo3x3( WorldMatrix ), Input.Tangent ) );
 				Out.Bitangent = normalize( cross( Out.Normal, Out.Tangent ) * Input.Tangent.w );
 				Out.Position = mul( WorldMatrix, Position );
+				#ifdef PDX_MESH_SNAP_VERTICES_TO_TERRAIN
+					Out.Position.xyz = SnapVerticesToTerrain( Out.Position.xz, Input.Position.y, WorldMatrix );
+				#endif
 				Out.WorldSpacePos = Out.Position.xyz;
-				Out.WorldSpacePos /= WorldMatrix[3][3];
 				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, Out.Position );
 
 				Out.UV0 = Input.UV0;
@@ -380,21 +420,14 @@ VertexShader =
 				float4 Position = float4( Input.Position.xyz, 1.0 );
 				float4x4 WorldMatrix = UnpackAndGetMapObjectWorldMatrix( Input.InstanceIndex24_Opacity8 );
 
-				// Reset Rotation
-				WorldMatrix[0][0] = 1;
-				WorldMatrix[0][1] = 0;
-				WorldMatrix[0][2] = 0;
-				WorldMatrix[1][0] = 0;
-				WorldMatrix[1][1] = 1;
-				WorldMatrix[1][2] = 0;
-				WorldMatrix[2][0] = 0;
-				WorldMatrix[2][1] = 0;
-				WorldMatrix[2][2] = 1;
-
 				// Wave Animation
-				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, float3( GetMatrixData( WorldMatrix, 3, 0 ), GetMatrixData( WorldMatrix, 3, 1 ), GetMatrixData( WorldMatrix, 3, 2 ) ) );
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex24_Opacity8 );
+				CalculateSineAnimation( Input.UV1, Position.xyz, Input.Normal, Input.Tangent, UserData._RandomValue );
 
 				Out.Position = mul( WorldMatrix, Position );
+				#ifdef PDX_MESH_SNAP_VERTICES_TO_TERRAIN
+					Out.Position.xyz = SnapVerticesToTerrain( Out.Position.xz, Input.Position.y, WorldMatrix );
+				#endif
 				Out.Position = FixProjectionAndMul( ViewProjectionMatrix, Out.Position );
 				Out.InstanceIndex24_Opacity8 = Input.InstanceIndex24_Opacity8;
 
@@ -434,12 +467,14 @@ PixelShader =
 			{
 				PS_COLOR_SSAO Out;
 
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex );
+
 				#ifdef UNDERWATER
 					clip( _WaterHeight - Input.WorldSpacePos.y + 0.1 ); // +0.1 to avoid gap between water and mesh
 				#endif
 
 				float2 MapCoords = Input.WorldSpacePos.xz * _WorldSpaceToTerrain0To1;
-				float2 ProvinceCoords = Input.WorldSpacePos.xz / ProvinceMapSize;
+				float2 ProvinceCoords = Input.WorldSpacePos.xz / _ProvinceMapSize;
 				float LocalHeight = Input.WorldSpacePos.y - GetHeight( Input.WorldSpacePos.xz );
 
 				float4 Diffuse = PdxTex2D( DiffuseMap, DIFFUSE_UV_SET );
@@ -454,14 +489,66 @@ PixelShader =
 				clip( Diffuse.a - 0.001f );
 
 				// Normal calculation
-				float3 NormalSample = UnpackRRxGNormal( PdxTex2D( NormalMap, NORMAL_UV_SET ) );
+				float4 NormalSample = PdxTex2D( NormalMap, NORMAL_UV_SET );
+				float3 InNormal = normalize( Input.Normal );
+				float3x3 TBN = Create3x3( normalize( Input.Tangent ), normalize( Input.Bitangent ), InNormal );
+				float3 Normal = normalize( mul( UnpackRRxGNormal( NormalSample ), TBN ) );
+
+				#if defined( TWO_SIDED )
+					float3 LookDir = normalize( CameraPosition - Input.WorldSpacePos );
+					if ( dot( InNormal, LookDir ) < 0.0 )
+					{
+						Normal = -Normal;
+					}
+				#endif
+
+				#if defined( UNIT_COLOR ) || defined( UNIT_COLOR_DEBUG )
+					float4 ChannelMask = PdxTex2D( ChannelMaskMap, DIFFUSE_UV_SET );
+
+					#if defined( UNIT_COLOR_DEBUG )
+						int CountryIndex = SampleCountryIndex( MapCoords );
+						float3 CountryColor01 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer01, CountryIndex ).rgb );
+						float3 CountryColor02 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer02, CountryIndex ).rgb );
+						float3 CountryColor03 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer03, CountryIndex ).rgb );
+					#else
+						float3 CountryColor01 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer01, UserData._CountryIndex ).rgb );
+						float3 CountryColor02 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer02, UserData._CountryIndex ).rgb );
+						float3 CountryColor03 = ToLinear( PdxReadBuffer4( CountryUnitColorBuffer03, UserData._CountryIndex ).rgb );
+					#endif
+
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor01 * ChannelMask.r, ChannelMask.r );
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor02 * ChannelMask.g, ChannelMask.g );
+					Diffuse.rgb = lerp( Diffuse.rgb, Diffuse.rgb * CountryColor03 * ChannelMask.b, ChannelMask.b );
+				#endif
+
+				// Standard of living
+				#ifdef SOL_VISUALS
+					float SolValue = GetUserDataPrettyValue( Input.InstanceIndex );
+					ApplyStandardOfLiving( Diffuse.rgb, DIFFUSE_UV_SET, SolValue, Input.WorldSpacePos, InNormal );
+				#endif
+
+				// Coa Flag - Second UV Set
+				#if defined( COA_TEXTURE ) || defined( COA_TEXTURE_OVERLAY )
+					float2 CoaUV = UNIQUE_UV_SET;
+					float4 OffsetScale = UserData._OffsetAndScale;
+					CoaUV = OffsetScale.xy + CoaUV * OffsetScale.zw;
+
+					float3 CoaColor = ToLinear( PdxTex2D( FlagTexture, CoaUV ).rgb );
+
+					if ( UNIQUE_UV_SET.x > 0.0 && UNIQUE_UV_SET.x < 1.0 && UNIQUE_UV_SET.y > 0.0 && UNIQUE_UV_SET.y < 1.0 )
+					{
+						#if defined( COA_TEXTURE )
+							Diffuse.rgb *= CoaColor;
+						#endif
+
+						#if defined( COA_TEXTURE_OVERLAY )
+							Diffuse.rgb = Overlay( Diffuse.rgb, CoaColor );
+						#endif
+					}
+				#endif
 
 				// Devastation
 				ApplyDevastationBuilding( Diffuse.rgb, Input.WorldSpacePos.xz, LocalHeight, DIFFUSE_UV_SET );
-
-				float3 InNormal = normalize( Input.Normal );
-				float3x3 TBN = Create3x3( normalize( Input.Tangent ), normalize( Input.Bitangent ), InNormal );
-				float3 Normal = normalize( mul( NormalSample, TBN ) );
 
 				// Revolution flag
 				#ifdef REVOLUTIONFLAG
@@ -476,19 +563,19 @@ PixelShader =
 
 				// Baked AO
 				#if defined( TINT_COLOR )
-					float4 Unique = PdxTex2D( UniqueMap, UNIQUE_UV_SET );
+					float4 Unique = PdxTex2D( TintMap, UNIQUE_UV_SET );
 					Diffuse.rgb = Overlay( Diffuse.rgb, Unique.rgb );
 				#endif
 
-				// Bottom tint effetc
+				// Bottom tint effect
 				float TintAngleModifier = saturate( 1.0 - dot( InNormal, float3( 0.0, 1.0, 0.0 ) ) );	// Removes tint from angles facing upwards
-				float TintBlend = ( 1.0 - smoothstep( MeshTintHeightMin, MeshTintHeightMax, LocalHeight ) ) * MeshTintColor.a * TintAngleModifier;
-				Diffuse.rgb = lerp(  Diffuse.rgb, Overlay( Diffuse.rgb, MeshTintColor.rgb ), TintBlend );
+				float TintBlend = ( 1.0 - smoothstep( _MeshTintHeightMin, _MeshTintHeightMax, LocalHeight ) ) * _MeshTintColor.a * TintAngleModifier;
+				Diffuse.rgb = lerp(  Diffuse.rgb, Overlay( Diffuse.rgb, _MeshTintColor.rgb ), TintBlend );
 
 				// Colormap blend, pre light
 				#if defined( COLORMAP )
 					float3 ColorMap = PdxTex2D( ColorTexture, float2( MapCoords.x, 1.0 - MapCoords.y ) ).rgb;
-					Diffuse.rgb = SoftLight( Diffuse.rgb, ColorMap, ( 1 - Properties.r ) );
+					Diffuse.rgb = SoftLight( Diffuse.rgb, ColorMap, ( 1.0 - Properties.r ) );
 				#endif
 
 				// Color overlay, pre light
@@ -513,11 +600,38 @@ PixelShader =
 
 						// Second sun
 						#ifndef SINGLESUN
-							SLightingProperties SecondLightingProps = GetSecondSunLightingProperties( Input.WorldSpacePos );
+							SLightingProperties SecondLightingProps = GetSecondSunLightingProperties( Input.WorldSpacePos, LightingProps._ShadowTerm );
 							float3 SecondSunColor = CalculateSecondSunLighting( MaterialProps, SecondLightingProps );
 							Color += SecondSunColor;
 						#endif
 					#endif
+				#endif
+
+				// Backlight
+				#if defined( BACKLIGHT ) && !defined( SINGLESUN ) && !defined( LOW_QUALITY_SHADERS )
+ 					AddBacklight( Color, Diffuse.rgb, Normal, SecondLightingProps._ToLightDir );
+				#endif
+
+				// Nighttime lights and visuals
+				#if defined( EMISSIVE_NIGHT ) || defined( EMISSIVE_NIGHT_RANDOM )
+						float ActivationThreshold = 0.05;
+						float ShouldActivate = 1.0;
+						float4 LightColor = _NightLightColor;
+
+						#if defined( HUB_BUILDING )
+							ActivationThreshold = GetUserDataRandomValueCity( Input.InstanceIndex );
+							#if defined( EMISSIVE_NIGHT_RANDOM )
+								ShouldActivate = clamp( GetUserDataShouldLightActivate( Input.InstanceIndex ), 0.0f, 1.0f );
+							#endif
+							LightColor = GetUserDataBuildingLightColor( Input.InstanceIndex );
+						#endif
+
+						float DayNightModifier = Remap( _DayNightValue, _LightsActivateBegin, _LightsActivateEnd, 0.0, 1.0 );
+						float LightValue = saturate( Remap( DayNightModifier, ActivationThreshold, _LightsFadeTime + ActivationThreshold, 0.0, 1.0 ) );
+						if ( DayNightModifier > ActivationThreshold )
+						{
+							Color += NormalSample.b * LightColor.rgb * LightColor.a * LightValue * ShouldActivate;
+						}
 				#endif
 
 				// Effects, post light
@@ -526,12 +640,12 @@ PixelShader =
 						Color = ApplyColorOverlay( Color, ColorOverlay, PostLightingBlend );
 					#endif
 					#ifndef NO_FOG
-						if( FlatmapLerp < 1.0 )
+						if( _FlatmapLerp < 1.0 )
 						{
 							float3 Unfogged = Color;
 							Color = ApplyFogOfWar( Color, Input.WorldSpacePos );
 							Color = GameApplyDistanceFog( Color, Input.WorldSpacePos );
-							Color = lerp( Color, Unfogged, FlatmapLerp );
+							Color = lerp( Color, Unfogged, _FlatmapLerp );
 						}
 					#endif
 				#endif
@@ -555,13 +669,87 @@ PixelShader =
 
 				// Output
 				Out.Color = float4( Color, Diffuse.a );
-				float3 SSAOColor_ = SSAOColorMesh.rgb + GameCalculateDistanceFogFactor( Input.WorldSpacePos );
+
+				// SSAO
+				float3 SSAOColor_ = _SSAOColorMesh.rgb + GameCalculateDistanceFogFactor( Input.WorldSpacePos );
 				#ifndef UNDERWATER
 					#ifndef NO_BORDERS
 						SSAOColor_ = SSAOColor_ + PostLightingBlend;
 					#endif
 				#endif
 				Out.SSAOColor = float4( saturate ( SSAOColor_ ), Diffuse.a);
+
+				return Out;
+			}
+		]]
+	}
+
+	MainCode PS_flatmap_unit
+	{
+		Input = "VS_OUTPUT"
+		Output = "PS_COLOR_SSAO"
+		Code
+		[[
+			#define DIFFUSE_UV_SET Input.UV0
+			#define NORMAL_UV_SET Input.UV0
+			#define PROPERTIES_UV_SET Input.UV0
+			#define UNIQUE_UV_SET Input.UV1
+
+			PDX_MAIN
+			{
+				PS_COLOR_SSAO Out;
+
+				SStandardMeshUserData UserData = GetStandardMeshUserData( Input.InstanceIndex );
+
+				// Uv Coords
+				float2 MapCoords = Input.WorldSpacePos.xz * _WorldSpaceToTerrain0To1;
+				float2 ProvinceCoords = Input.WorldSpacePos.xz / _ProvinceMapSize;
+
+				// Settings;
+				float3 OutlineColorPicker = vec3( 0.06 );
+				float AlphaMultiplier = 0.8;
+
+				// Texture masks
+				float4 UnitMasks = PdxTex2D( DiffuseMap, DIFFUSE_UV_SET );
+				UnitMasks.rgb = ToGamma( UnitMasks.rgb );
+				float Base = UnitMasks.r;
+				float Outline = UnitMasks.g - Base;
+				float Inline = UnitMasks.b;
+
+				// Alpha
+				float Alpha = saturate( saturate( Inline + Outline ) );
+				Alpha = Alpha * AlphaMultiplier;
+				Alpha = ApplyOpacity( Alpha, Input.Position.xy, Input.InstanceIndex );
+
+				int CountryIndex = SampleCountryIndex( MapCoords );
+				float4 CountryColor = PdxTex2DLoad0( CountryColors, int2( CountryIndex, 0 ) );
+
+				// Colors
+				float3 Color = OutlineColorPicker;
+				Color = lerp( Color, CountryColor, Inline );
+
+				// Color overlay, pre light
+				float3 ColorOverlay;
+				float PreLightingBlend;
+				float PostLightingBlend;
+				GameProvinceOverlayAndBlend( ProvinceCoords, Input.WorldSpacePos, ColorOverlay, PreLightingBlend, PostLightingBlend );
+
+				// Flatmap
+				#ifdef FLATMAP
+				 	float LandMask = PdxTex2DLod0( LandMaskMap, float2( MapCoords.x, 1.0 - MapCoords.y ) ).r;
+					Alpha *= ( 1.0 - ( LandMask * ( 1.0 - _FlatmapOverlayLandOpacity ) ) );
+				#endif
+
+				// Output
+				Out.Color = float4( Color, Alpha );
+
+				float3 SSAOColor_ = _SSAOColorMesh.rgb + GameCalculateDistanceFogFactor( Input.WorldSpacePos );
+				#ifndef UNDERWATER
+					#ifndef NO_BORDERS
+						SSAOColor_ = SSAOColor_ + PostLightingBlend;
+					#endif
+				#endif
+				Out.SSAOColor = float4( saturate ( SSAOColor_ ), Alpha );
 
 				return Out;
 			}
@@ -588,7 +776,7 @@ BlendState alpha_to_coverage
 	AlphaToCoverage = yes
 }
 
-DepthStencilState depth_test_no_write
+DepthStencilState DepthStencilStateAlphaBlend
 {
 	DepthEnable = yes
 	DepthWriteEnable = no
@@ -599,10 +787,22 @@ RasterizerState RasterizerState
 	DepthBias = 0
 	SlopeScaleDepthBias = 0
 }
+RasterizerState RasterizerStateTwoSided
+{
+	DepthBias = 0
+	SlopeScaleDepthBias = 0
+	CullMode = "none"
+}
 RasterizerState ShadowRasterizerState
 {
 	DepthBias = 0
 	SlopeScaleDepthBias = 2
+}
+RasterizerState ShadowRasterizerStateTwoSided
+{
+	DepthBias = 0
+	SlopeScaleDepthBias = 2
+	CullMode = "none"
 }
 RasterizerState FlatmapRasterizerState
 {
@@ -622,6 +822,20 @@ Effect standardShadow
 	PixelShader = "PixelPdxMeshStandardShadow"
 	RasterizerState = ShadowRasterizerState
 }
+Effect standard_twosided
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_standard"
+	RasterizerState = RasterizerStateTwoSided
+	Defines = { "TWO_SIDED" }
+}
+Effect standard_twosidedShadow
+{
+	VertexShader = "VS_standard_shadow"
+	PixelShader = "PixelPdxMeshStandardShadow"
+	RasterizerState = ShadowRasterizerStateTwoSided
+	Defines = { "TWO_SIDED" }
+}
 
 # Standard + alpha blend
 Effect standard_alpha_blend
@@ -629,7 +843,7 @@ Effect standard_alpha_blend
 	VertexShader = "VS_standard"
 	PixelShader = "PS_standard"
 	BlendState = "alpha_blend"
-	DepthStencilState = "depth_test_no_write"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
 }
 Effect standard_alpha_blendShadow
 {
@@ -637,6 +851,23 @@ Effect standard_alpha_blendShadow
 	PixelShader = "PixelPdxMeshAlphaBlendShadow"
 	RasterizerState = ShadowRasterizerState
 }
+Effect standard_alpha_blend_twosided
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_standard"
+	RasterizerState = RasterizerStateTwoSided
+	BlendState = "alpha_blend"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
+	Defines = { "TWO_SIDED" }
+}
+Effect standard_alpha_blend_twosidedShadow
+{
+	VertexShader = "VS_standard_shadow"
+	PixelShader = "PixelPdxMeshAlphaBlendShadow"
+	RasterizerState = ShadowRasterizerStateTwoSided
+	Defines = { "TWO_SIDED" }
+}
+
 
 # Standard + a2c
 Effect standard_alpha_to_coverage
@@ -652,6 +883,22 @@ Effect standard_alpha_to_coverageShadow
 	PixelShader = "PixelPdxMeshAlphaBlendShadow"
 	RasterizerState = ShadowRasterizerState
 	Defines = { "ALPHA_TO_COVERAGE" }
+}
+Effect standard_alpha_to_coverage_twosided
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_standard"
+	RasterizerState = RasterizerStateTwoSided
+	BlendState = "alpha_to_coverage"
+	Defines = { "ALPHA_TO_COVERAGE" "TWO_SIDED" }
+}
+Effect standard_alpha_to_coverage_twosidedShadow
+{
+	VertexShader = "VS_standard_shadow"
+	PixelShader = "PixelPdxMeshAlphaBlendShadow"
+	RasterizerState = RasterizerStateTwoSided
+	RasterizerState = ShadowRasterizerState
+	Defines = { "ALPHA_TO_COVERAGE" "TWO_SIDED" }
 }
 
 # Flag animation
@@ -687,7 +934,7 @@ Effect flatmap_alpha_blend_no_borders
 	VertexShader = "VS_standard"
 	PixelShader = "PS_standard"
 	BlendState = "alpha_blend"
-	DepthStencilState = "depth_test_no_write"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
 	RasterizerState = FlatmapRasterizerState
 	Defines = { "NO_BORDERS" "NO_FOG"  }
 }
@@ -730,7 +977,7 @@ Effect standard_alpha_blend_mapobject
 	VertexShader = "VS_mapobject"
 	PixelShader = "PS_standard"
 	BlendState = "alpha_blend"
-	DepthStencilState = "depth_test_no_write"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
 }
 Effect standard_alpha_blendShadow_mapobject
 {
@@ -787,7 +1034,7 @@ Effect flatmap_alpha_blend_no_borders_mapobject
 	VertexShader = "VS_mapobject"
 	PixelShader = "PS_standard"
 	BlendState = "alpha_blend"
-	DepthStencilState = "depth_test_no_write"
+	DepthStencilState = "DepthStencilStateAlphaBlend"
 	RasterizerState = FlatmapRasterizerState
 	Defines = { "NO_BORDERS" "NO_FOG" "FLATMAP"  }
 }
@@ -797,4 +1044,13 @@ Effect flatmap_alpha_blend_no_bordersShadow_mapobject
 	PixelShader = "PS_jomini_mapobject_shadow_alphablend"
 	Defines = { "NO_FOG" "FLATMAP" }
 	RasterizerState = ShadowRasterizerState
+}
+
+# Special flatmap unit
+Effect flatmap_unit
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_flatmap_unit"
+
+	BlendState = "alpha_blend"
 }
