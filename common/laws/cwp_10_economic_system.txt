@@ -273,14 +273,36 @@ law_socialization = {
 		law_heavy_industry_nationalization
 	}
 	on_activate = {
-		seize_investment_pool = yes
+		#seize_investment_pool = yes
 		custom_tooltip = {
 			text = enact_law_radical_leftist_economy_warning_desc
 		}
 	}
 	modifier = {
+		#state_farmers_investment_pool_efficiency_mult = 0.25
+		#state_service_workers_investment_pool_efficiency_mult = 0.25
+		#state_engineers_investment_pool_efficiency_mult = 0.25
+		#state_professionals_investment_pool_efficiency_mult = 0.25
+		#state_technicians_investment_pool_efficiency_mult = 0.25
+		state_farmers_investment_pool_contribution_add = 0.1
+		state_laborers_investment_pool_contribution_add = 0.1
+		state_technicians_investment_pool_contribution_add = 0.25
+		state_professionals_investment_pool_contribution_add = 0.25
+		state_service_workers_investment_pool_contribution_add = 0.25
+		state_engineers_investment_pool_contribution_add = 0.25
+
+		
 		country_subsidies_all = yes
-		country_disable_investment_pool = yes
+		#country_disable_investment_pool = yes
+	}
+	build_from_investment_pool = {
+		bg_manufacturing
+		bg_mining
+		bg_logging
+		bg_rubber
+		bg_fossil_fuels
+		bg_urban_facilities
+		bg_fishing
 	}
 	possible_political_movements = {
 		law_interventionism

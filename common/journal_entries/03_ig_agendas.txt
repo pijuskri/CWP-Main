@@ -110,10 +110,10 @@
                 scope:government_petition_ig = {
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = {
-							add = 1
+							add = 0.5
 							divide = {
 								add = 1
 								add = ROOT.enactment_phase
@@ -137,10 +137,10 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
                         is_decaying = yes
 						multiplier = {
-							add = 1.5
+							add = 0.75
 						}
                     }
                 }
@@ -158,9 +158,9 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
 						multiplier = {
-							add = 1
+							add = 0.5
 						}
                         is_decaying = yes
                     }
@@ -177,7 +177,7 @@
                 scope:government_petition_ig = {
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = {
 							add = 1
@@ -203,10 +203,10 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = {
-							add = 2
+							add = 0.5
 							divide = {
 								add = 1
 								add = ROOT.enactment_phase
@@ -228,10 +228,10 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        months = long_modifier_time
+                        months = 24
                         is_decaying = yes
 						multiplier = {
-							add = 1.5
+							add = 0.5
 							divide = {
 								add = 1
 								add = ROOT.enactment_phase
@@ -255,9 +255,9 @@
 			scope:government_petition_ig = {
 				add_modifier = {
 					name = modifier_failed_to_meet_petition
-					months = long_modifier_time
+					months = 24
 					is_decaying = yes
-					multiplier = 2
+					multiplier = 1
 				}
 			}
         }

@@ -2,9 +2,9 @@
 	war_goal = open_market
 	texture = "gfx/interface/icons/war_goals/open_market.dds"
 	possible = {
-		NOT = {
-			is_country_type = decentralized
-		}
+		#NOT = {
+		#	is_country_type = decentralized
+		#}
 		NOT = {
 			has_modifier = forced_neutrality
 		}
@@ -74,9 +74,9 @@ dp_conquer_state = {
 	war_goal = conquer_state
 	texture = "gfx/interface/icons/war_goals/conquer_state.dds"
 	possible = {
-		NOT = {
-			is_country_type = decentralized
-		}
+		#NOT = {
+		#	is_country_type = decentralized
+		#}
 		NOT = {
 			has_modifier = forced_neutrality
 		}
@@ -198,9 +198,9 @@ dp_take_treaty_port = {
 	war_goal = take_treaty_port
 	texture = "gfx/interface/icons/war_goals/take_treaty_port.dds"
 	possible = {
-		NOT = {
-			is_country_type = decentralized
-		}
+		#NOT = {
+		#	is_country_type = decentralized
+		#}
 		NOT = {
 			has_modifier = forced_neutrality
 		}

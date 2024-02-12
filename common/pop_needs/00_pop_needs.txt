@@ -244,8 +244,8 @@ popneed_free_movement = {
 	}
 	entry = {
 		goods = automobiles
-		weight = 1
-		max_weight = 4		# Maxes out at 80% of supply share
+		weight = 3
+		max_weight = 3		# Maxes out at 80% of supply share
 		min_weight = 0
 	}
 }
@@ -322,8 +322,8 @@ popneed_luxury_items = {
 	}
 	entry = {
 		goods = luxury_cars
-		weight = 1
-		max_weight = 4		# Maxes out at 80% of supply share
+		weight = 3
+		max_weight = 2		# Maxes out at 80% of supply share
 		min_weight = 0
 	}
 	entry = {

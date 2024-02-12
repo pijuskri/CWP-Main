@@ -527,7 +527,7 @@ money_supply_growth_from_gold = {
 		}
 		subtract = {
 			value = gold_reserves
-			divide = 10
+			divide = 20 #10
 		}
 	}
 	if = {
@@ -793,6 +793,24 @@ inflation_growth = {
 		}
 		value = {
 			value = var:pegged_currency.inflation_growth
+		}
+	}
+	if = {
+		limit = {
+			is_player = yes
+		}
+		
+		subtract = {
+			value = {
+				value = {
+					value = var:inflation_rate
+					subtract = 1
+				}
+				divide = 8
+			}
+			
+			desc = INF_DEF_MONEY_SUPPLY
+			format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
 		}
 	}
 	max = 100
@@ -1756,6 +1774,18 @@ inflation_electricity_price = {
 		}
 		add = 0.7
 	}
+	if = {
+		limit = {
+			owner = {
+				market = {
+					mg:electricity = {
+						market_goods_buy_orders <= 10
+					}
+				}
+			}
+		}
+		multiply = 0.0
+	}
 }
 
 inflation_media_price = {
@@ -1916,6 +1946,18 @@ inflation_media_price = {
 		}
 		add = 0.7
 	}
+	if = {
+		limit = {
+			owner = {
+				market = {
+					mg:media = {
+						market_goods_buy_orders <= 10
+					}
+				}
+			}
+		}
+		multiply = 0.0
+	}
 }
 
 inflation_healthcare_price = {
@@ -2075,5 +2117,17 @@ inflation_healthcare_price = {
 			}
 		}
 		add = 0.7
+	}
+	if = {
+		limit = {
+			owner = {
+				market = {
+					mg:healthcare = {
+						market_goods_buy_orders <= 10
+					}
+				}
+			}
+		}
+		multiply = 0.0
 	}
 }

@@ -291,6 +291,7 @@ pm_higher_education = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 3
+			country_weekly_innovation_max_add = 0.3
 		}
 	}
 	building_modifiers = {
@@ -319,6 +320,7 @@ pm_scientific_education = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 6
+			country_weekly_innovation_max_add = 0.6
 		}
 	}
 	building_modifiers = {
@@ -347,6 +349,7 @@ pm_interdisciplinary_studies = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 8
+			country_weekly_innovation_max_add = 0.8
 		}
 	}
 	building_modifiers = {
@@ -375,6 +378,7 @@ pm_advanced_analytics = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 10
+			country_weekly_innovation_max_add = 1
 		}
 	}
 	building_modifiers = {
@@ -404,6 +408,7 @@ pm_computer_science = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 12
+			country_weekly_innovation_max_add = 1.2
 		}
 	}
 	building_modifiers = {
@@ -434,6 +439,7 @@ pm_business_schools = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 14
+			country_weekly_innovation_max_add = 1.4
 		}
 	}
 	building_modifiers = {
@@ -463,6 +469,7 @@ pm_humanities_education = {
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 16
+			country_weekly_innovation_max_add = 1.6
 		}
 	}
 	building_modifiers = {

@@ -192,10 +192,12 @@ NEconomy = {
 NMilitary = {
 	MANPOWER_LOST_DUE_TO_ATTRITION_PER_WEEK_MIN = 0.01 	# The minimum percentage of manpower a unit can lose each week due to attrition
 	MANPOWER_LOST_DUE_TO_ATTRITION_PER_WEEK_MAX = 0.05 	# The maximum percentage of manpower a unit can lose each week due to attrition
-	GENERAL_TRAVEL_PIXELS_TO_DAYS_SCALE = 0.005     # Used to convert a travel distance from pixels to days. Example: a travel of 500px becomes 500 * 0.05 = 25 days
+	GENERAL_TRAVEL_PIXELS_TO_DAYS_SCALE = 0.002 #0.005     # Used to convert a travel distance from pixels to days. Example: a travel of 500px becomes 500 * 0.05 = 25 days
     GENERAL_AUTO_TRAVEL_MAX_DAYS = 5                # Disables auto traveling if the travel takes more than `GENERAL_AUTO_TRAVEL_MAX_DAYS`. Makes general standby the nearest HQ.
     GENERAL_TRAVEL_AUTO_REASSIGN_INSTANTLY = 5		# If General is being auto reassigned (front destruction for example) and travel time is below this number of days make them travel instantly
 	BASE_MORALE_LOST_PER_DAY = 0.075				# Default morale lost when out of supply is 5%
+	BATTLE_LETHALITY_MAX = 0.02
+	MIN_MANPOWER_CASUALTY_PER_ROUND = 100
 }
 
 NDiplomacy = {

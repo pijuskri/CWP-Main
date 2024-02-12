@@ -250,6 +250,18 @@ ig_corruption_growth = {
 			format = "CORRUPTION_GROWTH_TOOLTIP_FORMAT"
 		}
 	}
+	if = {
+		limit = {
+			owner = {
+				has_modifier = my_boost				# Anti-Corruption drive decreases corruption
+			}
+		}
+		add = {
+			value = -1
+			desc = COR_ANTI_CORRUPTION_DRIVE
+			format = "CORRUPTION_GROWTH_TOOLTIP_FORMAT"
+		}
+	}
 }
 
 corruption_baseline = {

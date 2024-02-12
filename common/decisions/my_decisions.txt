@@ -1,0 +1,16 @@
+﻿my_based_decision = {
+	is_shown = {
+		is_ai = no
+        NOT = {                    
+            has_modifier = my_boost
+        }
+	}
+	
+	when_taken = {
+        add_modifier = my_boost
+	}
+
+	ai_chance = {
+		base = -100
+	}
+}
