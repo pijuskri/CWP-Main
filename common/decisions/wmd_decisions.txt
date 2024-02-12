@@ -104,6 +104,7 @@ develop_civilian_nuclear_capability = {
 			has_law = law_type:law_civilian_applications
 			has_law = law_type:law_deterrence
 			has_law = law_type:law_first_strike
+			has_law = law_type:law_civilian_applications
 		}
 		any_scope_state = {
 			has_building = building_nuclear_research_facility

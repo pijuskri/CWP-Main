@@ -1,4 +1,4 @@
-﻿# triggered by UN Resolution Screen
+# triggered by UN Resolution Screen
 je_acquire_civilian_nuclear_capability = {
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 	group = je_group_objectives

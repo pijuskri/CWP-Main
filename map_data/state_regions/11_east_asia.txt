@@ -1,4 +1,4 @@
-﻿STATE_DZUNGARIA = {
+STATE_DZUNGARIA = {
     id = 478
     subsistence_building = building_subsistence_pastures
     provinces = { x000608 x04C89D x0620FE x07F0AF x0A2195 x0C88B1 x0F4C2D x0F9D55 x11E76D x120FBC x12ACAE x12C136 x142640 x1433E4 x1534A6 x15FF3C x1AD69B x1B0B79 x1D5C5B x209080 x215B65 x23E045 x24EE89 x2510D5 x258022 x259C0F x25D9E3 x263586 x263B1E x26D431 x2786AE x27D957 x29E971 x2A14FF x2B8C7B x2C62EC x2C702C x2F1427 x2F65AF x311E86 x31A27F x33E4BE x354506 x360C0E x373176 x374810 x391A90 x3BE0B5 x3C0281 x3F1FF5 x408527 x40D207 x43390F x43C26F x445580 x45BC97 x468A62 x473EA4 x485D7B x48D89E x4A27C7 x4A4C3F x4A68FC x4C9CE6 x4CC4F4 x4D1F97 x4DBB91 x4E8FCF x51EEA9 x52F5C3 x530B3A x530C6B x5386D4 x540EC3 x5472A2 x54F9AF x560AAC x56EA5E x583589 x5B2A4A x601000 x60245F x60F478 x611EF2 x6196AC x622E5A x6399F9 x671A54 x683516 x699EAD x6A7E99 x6B16DD x6B3360 x6D166D x6E1198 x6F9542 x70E13C x7144E4 x733CDC x73ED69 x748231 x76B00A x7AF2BE x7B100B x7E5A72 x7F3EDD x7FE46A x8008FB x834EFB x846CB8 x846DC3 x8525AC x85E5E1 x86384A x8842DB x88F2AD x89C0FC x8AC251 x8AFD09 x8B7F68 x8CF80D x8F1E87 x9063C8 x92AAFF x936758 x9452A4 x9C4F53 x9CEE7E x9D4FBD x9E8A57 x9E9BA1 x9F10C6 x9F78DD xA01000 xA0C5AC xA0EE7C xA37B85 xA603F2 xA64035 xA8EB21 xA8F76F xA98C7C xA9D689 xA9FDA2 xAC02F9 xAC8786 xAD8B97 xAE3793 xAF7B51 xAFE7F9 xB28683 xB35201 xB3A81A xB4E043 xB7A8F3 xB8B8A3 xB9D609 xBB54BD xBD4A6C xBD5250 xBDABA1 xBDCE76 xBDFEF4 xBEB037 xBF2C27 xBF3160 xBF428B xBF7E06 xC04619 xC0D0C0 xC11747 xC125B4 xC298E1 xC2DD15 xC339C8 xC3FC31 xC566EF xC5F8DD xC74F92 xC82F0C xC86ACB xCA52B4 xCBD4BD xCD9C92 xCDDFC9 xCF5453 xD1D99D xD24351 xD2C1A7 xD325F3 xD492A3 xD78A54 xD9F4DE xDABB25 xDC14C0 xDC641A xDF54AE xDFE117 xE00918 xE132FF xE1F075 xE1FE47 xE1FF70 xE23682 xE28447 xE2FB57 xE3D9DC xE44E3D xE4C3B1 xE5C4D6 xE66CE7 xE71646 xE7DE0A xE8379B xE85F71 xEA6DD5 xEB9468 xEC307A xEC6A5A xF07848 xF0D27D xF1B341 xF1CA4F xF362CE xF392BB xF40512 xF51399 xF536A6 xF5A2D0 xF7F5E9 xF8CB67 xF8DFA8 xF98388 xFABA5B xFCD951 xFD7F94 xFDBF2F xFFCF37 }
@@ -16,7 +16,7 @@
     }
     resource = {
         type = bg_natural_gas_well
-        undiscovered_amount = 3
+        undiscovered_amount = 6
     }
     capped_resources = {
         bg_iron_mining = 24
@@ -43,7 +43,7 @@ STATE_TIANSHAN = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 8
     }
     resource = {
         type = bg_oil_rig
@@ -74,8 +74,8 @@ STATE_SICHUAN = {
         bg_coal_mining = 60
         bg_phosphorus_mining = 40
         bg_copper_mining = 40
-        bg_logging = 23
-        bg_bauxite_mining = 5
+        bg_logging = 26
+        bg_bauxite_mining = 8
     }
     resource = {
         type = bg_natural_gas_well
@@ -105,13 +105,13 @@ STATE_YUNNAN = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 4
+        undiscovered_amount = 8
     }
     capped_resources = {
         bg_coal_mining = 40
         bg_iron_mining = 60
         bg_copper_mining = 42
-        bg_logging = 17
+        bg_logging = 24
         bg_bauxite_mining = 16
     }
 }
@@ -129,7 +129,7 @@ STATE_GUIZHOU = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_tea_plantations bg_tobacco_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 4
     }
     resource = {
         type = bg_oil_rig
@@ -142,7 +142,7 @@ STATE_GUIZHOU = {
     }
     capped_resources = {
         bg_coal_mining = 32
-        bg_logging = 26
+        bg_logging = 32
         bg_bauxite_mining = 20
     }
 }
@@ -161,11 +161,11 @@ STATE_SHAOZHOU = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_silk_plantations bg_tea_plantations bg_tobacco_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 4
     }
     capped_resources = {
         bg_iron_mining = 36
-        bg_logging = 11
+        bg_logging = 16
         bg_fishing = 10
     }
     naval_exit_id = 3056
@@ -240,14 +240,14 @@ STATE_GUANGXI = {
     }
     resource = {
         type = bg_natural_gas_well
-        undiscovered_amount = 2
+        undiscovered_amount = 7
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 10
+        undiscovered_amount = 18
     }
     capped_resources = {
-        bg_logging = 9
+        bg_logging = 12
         bg_bauxite_mining = 35
     }
 }
@@ -322,7 +322,7 @@ STATE_OUTER_MANCHURIA = {
         bg_coal_mining = 32
         bg_iron_mining = 45
         bg_copper_mining = 22
-        bg_logging = 20
+        bg_logging = 26
         bg_fishing = 10
         bg_gold_mining = 8
     }
@@ -535,7 +535,7 @@ STATE_GUANGDONG = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_silk_plantations bg_tea_plantations bg_tobacco_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 9
+        undiscovered_amount = 24
     }
     resource = {
         type = bg_oil_rig
@@ -602,7 +602,7 @@ STATE_JIANGSU = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_silk_plantations bg_tea_plantations bg_tobacco_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 8
     }
     resource = {
         type = bg_natural_gas_well
@@ -668,11 +668,11 @@ STATE_ZHILI = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 6
+        undiscovered_amount = 14
     }
     resource = {
         type = bg_natural_gas_well
-        undiscovered_amount = 12
+        undiscovered_amount = 18
     }
     resource = {
         type = bg_oil_rig
@@ -737,7 +737,7 @@ STATE_SOUTHERN_ANHUI = {
     }
     resource = {
         type = bg_natural_gas_well
-        undiscovered_amount = 4
+        undiscovered_amount = 8
     }
     capped_resources = {
         bg_coal_mining = 40
@@ -818,7 +818,7 @@ STATE_HUNAN = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_silk_plantations bg_tea_plantations bg_tobacco_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 8
     }
     capped_resources = {
         bg_phosphorus_mining = 44
@@ -841,7 +841,7 @@ STATE_FORMOSA = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_tea_plantations bg_tobacco_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 5
+        undiscovered_amount = 8
     }
     resource = {
         type = bg_oil_rig
@@ -878,7 +878,7 @@ STATE_SHANDONG = {
     }
     resource = {
         type = bg_natural_gas_well
-        undiscovered_amount = 33
+        undiscovered_amount = 40
     }
     capped_resources = {
         bg_phosphorus_mining = 32
@@ -920,7 +920,7 @@ STATE_ULIASTAI = {
     arable_resources = { bg_livestock_ranches }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 5
+        undiscovered_amount = 8
     }
     capped_resources = {
         bg_coal_mining = 36
@@ -945,7 +945,7 @@ STATE_URGA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 15
     }
     resource = {
         type = bg_oil_rig
@@ -973,7 +973,7 @@ STATE_CAMBODIA = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_silk_plantations bg_tea_plantations bg_tobacco_plantations bg_sugar_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 5
     }
     capped_resources = {
         bg_iron_mining = 30
@@ -1060,7 +1060,7 @@ STATE_ANNAM = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 7
+        undiscovered_amount = 9
     }
     naval_exit_id = 3054
 }
@@ -1079,7 +1079,7 @@ STATE_MEKONG = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_coffee_plantations bg_cotton_plantations bg_silk_plantations bg_tea_plantations bg_sugar_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 5
+        undiscovered_amount = 10
     }
     capped_resources = {
         bg_logging = 20
@@ -1102,7 +1102,7 @@ STATE_LAOS = {
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_coffee_plantations bg_cotton_plantations bg_silk_plantations bg_tea_plantations bg_tobacco_plantations bg_sugar_plantations bg_banana_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 4
     }
     capped_resources = {
         bg_coal_mining = 32
