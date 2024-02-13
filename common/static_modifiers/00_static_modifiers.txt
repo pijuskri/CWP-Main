@@ -1,4 +1,4 @@
-﻿# All global modifiers are here.  They are applied from certain game-features.
+# All global modifiers are here.  They are applied from certain game-features.
 #
 # Effects are fully scriptable here.
 #these names can NOT be removed or changed, as the code uses them....
@@ -57,6 +57,10 @@ base_values = {
 	state_urbanization_per_level_add = 100
 	
 	unit_experience_gain_add = 1.0
+	
+	country_trade_route_quantity_mult = 2
+	country_trade_route_cost_mult = -0.5
+	political_movement_radicalism_mult = -0.2
 }
 
 # Scales with a country's global prestige rank, so at 20/100 this is multiplied by 0.8x, 50/100 by 0.5x, etc
