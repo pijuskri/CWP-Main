@@ -24,8 +24,8 @@
 	state_colony_growth_speed_mult = 0.3
 
 	country_construction_add = 30
-	country_resource_discovery_chance_mult = 0.5
-	country_resource_depletion_chance_mult = -0.5
+	country_resource_discovery_chance_mult = 1
+	country_resource_depletion_chance_mult = -0.8
 	unit_recovery_rate_add = 0.1
 
 	interest_group_approval_add = 10
@@ -51,6 +51,8 @@
 	#country_corruption_increase_add = -0.1
 	#interest_group_corruption_decay = 0.02
 	state_pop_qualifications_mult = 2
-	state_education_access_add = 0.2
+	state_education_access_add = 0.1
+	
+	country_max_weekly_construction_progress_add = 30
 }
 

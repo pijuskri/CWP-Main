@@ -200,7 +200,7 @@ NEconomy = {
 	EMPLOYMENT_RESOURCE_DEPLETE_CHANCE = 0.0001	# Multiplied by number of fully employed levels of the building
 	BASE_RESOURCE_DISCOVER_CHANCE = 0.00001		# Per day (1.0 = 1%)
 	RESOURCE_DISCOVER_MIN_FRACTION = 0.01		# Min fraction of resources that will be discovered for each successful roll
-	RESOURCE_DISCOVER_MAX_FRACTION = 0.01		# Max fraction of resources that will be discovered for each successful roll
+	RESOURCE_DISCOVER_MAX_FRACTION = 0.1		# Max fraction of resources that will be discovered for each successful roll
 	RESOURCE_DEPLETE_MIN_AMOUNT = 1				# Min amount of resources that will be depleted for each successful roll
 	RESOURCE_DEPLETE_MAX_AMOUNT = 1				# Max amount of resources that will be depleted for each successful roll
 

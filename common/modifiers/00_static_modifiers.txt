@@ -55,6 +55,10 @@ base_values = {
 	state_urbanization_per_level_add = 100
 	
 	unit_experience_gain_add = 1.0
+	
+	country_trade_route_quantity_mult = 2
+	country_trade_route_cost_mult = -0.5
+	political_movement_radicalism_mult = -0.2
 }
 
 # Scales with a country's global prestige rank, so at 20/100 this is multiplied by 0.8x, 50/100 by 0.5x, etc

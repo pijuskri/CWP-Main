@@ -404,6 +404,7 @@ pm_highways = {
 			building_group_bg_mining_throughput_add = 0.005
 			building_group_bg_plantations_throughput_add = 0.005
 			building_group_bg_rubber_throughput_add = 0.005
+			state_market_access_price_impact = 0.005
 		}
 	}
 }
@@ -433,6 +434,7 @@ pm_autobahn_roads = {
 			building_group_bg_mining_throughput_add = 0.01
 			building_group_bg_plantations_throughput_add = 0.01
 			building_group_bg_rubber_throughput_add = 0.01
+			state_market_access_price_impact = 0.01
 		}
 	}
 }

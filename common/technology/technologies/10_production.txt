@@ -666,6 +666,9 @@ transverse_engine = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/transverse_engine.dds"
 	category = production
+	modifier = {
+		state_market_access_price_impact = 0.05
+	}
 	unlocking_technologies = {
 		automobile_standardization
 	}
@@ -886,6 +889,9 @@ high_speed_rails = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/high_speed_rails.dds"
 	category = production
+	modifier = {
+		state_market_access_price_impact = 0.05
+	}
 	unlocking_technologies = {
 		dieselization
 	}
