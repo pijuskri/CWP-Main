@@ -8,13 +8,13 @@
 
 	selectable = {
 		has_dlc_feature = foreign_investment
-		NOT = { is_country_type = decentralized }
+		#NOT = { is_country_type = decentralized }
 		is_revolutionary = no
 	}
 	
 	potential = {
 		scope:target_country = {
-			NOT = { is_country_type = decentralized }
+			#NOT = { is_country_type = decentralized }
 			is_revolutionary = no
 		}
 	
@@ -85,17 +85,17 @@
 			}
 		}
 
-		requirement_to_maintain = {
-			trigger = {
-				custom_tooltip = {
-					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
-					NOT = { is_country_type = decentralized }
-					scope:target_country = {
-						NOT = { is_country_type = decentralized }
-					}
-				}
-			}
-		}
+		#requirement_to_maintain = {
+		#	trigger = {
+		#		custom_tooltip = {
+		#			text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+		#			NOT = { is_country_type = decentralized }
+		#			scope:target_country = {
+		#				NOT = { is_country_type = decentralized }
+		#			}
+		#		}
+		#	}
+		#}
 
 		requirement_to_maintain = {
 			trigger = {

@@ -24,10 +24,10 @@
 			}
 		}
 		actor_can_break = {
-			always = no
+			always = yes
 		}
 		target_can_break = {
-			always = no
+			always = yes
 		}
 		manual_break_effect = {
 			change_relations = {
