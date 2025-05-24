@@ -221,7 +221,7 @@ pm_pre_war_housing = {
             goods_input_glass_add = 3
             goods_input_wood_add = 10
             goods_input_steel_add = 3
-            goods_output_housing_add = 20
+            goods_output_housing_add = 23
         }
         level_scaled = {
             building_employment_laborers_add = 1200
@@ -244,7 +244,7 @@ pm_prefabricated_housing = {
             goods_input_copper_add = 2
             goods_input_tools_add = 2
             goods_input_electricity_add = 3
-            goods_output_housing_add = 25
+            goods_output_housing_add = 27
         }
         level_scaled = {
             building_employment_laborers_add = 800
@@ -273,7 +273,7 @@ pm_tube_structural_housing = {
             goods_input_plastics_add = 4
             goods_input_tools_add = 3
             goods_input_electricity_add = 5
-            goods_output_housing_add = 30
+            goods_output_housing_add = 35
         }
         level_scaled = {
             building_employment_laborers_add = 400
@@ -302,7 +302,7 @@ pm_pressed_concrete_housing = {
             goods_input_copper_add = 2
             goods_input_plastics_add = 8
             goods_input_electricity_add = 6
-            goods_output_housing_add = 35
+            goods_output_housing_add = 43
         }
         level_scaled = {
             building_employment_engineers_add = 1000
@@ -329,7 +329,7 @@ pm_sustainable_housing = {
             goods_input_aluminum_add = 6
             goods_input_copper_add = 2
             goods_input_electricity_add = 8
-            goods_output_housing_add = 40
+            goods_output_housing_add = 58
         }
         level_scaled = {
             building_employment_clericals_add = 200

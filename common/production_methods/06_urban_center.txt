@@ -36,7 +36,7 @@ pm_industrial_cities = {
 	}
 	state_modifiers = {
 		level_scaled = {
-			state_building_housing_max_level_add = 1
+			state_building_housing_max_level_add = 1.2
 		}
 	}
 }
@@ -58,7 +58,7 @@ pm_modernist_cities = {
 	}
 	state_modifiers = {
 		level_scaled = {
-			state_building_housing_max_level_add = 1
+			state_building_housing_max_level_add = 1.4
 		}
 	}
 }
@@ -80,7 +80,7 @@ pm_neo_traditional_cities = {
 	}
 	state_modifiers = {
 		level_scaled = {
-			state_building_housing_max_level_add = 1
+			state_building_housing_max_level_add = 1.6
 		}
 	}
 }
@@ -103,7 +103,7 @@ pm_sustainable_cities = {
 	}
 	state_modifiers = {
 		level_scaled = {
-			state_building_housing_max_level_add = 1
+			state_building_housing_max_level_add = 1.8
 		}
 	}
 }
