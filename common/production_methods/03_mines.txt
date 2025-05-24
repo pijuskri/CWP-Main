@@ -187,12 +187,12 @@ pm_power_tools_coal = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_electricity_add = 10
+			goods_input_electricity_add = 35
 			# output goods
-			goods_output_coal_add = 15
+			goods_output_coal_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -210,13 +210,13 @@ pm_robotics_integrated_manufacturing_coal = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_electricity_add = 10
-			goods_input_electronics_add = 5
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			goods_output_coal_add = 25
+			goods_output_coal_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -234,13 +234,13 @@ pm_computer_analyzed_mining_coal = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_electricity_add = 10
-			goods_input_computers_add = 5
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			goods_output_coal_add = 35
+			goods_output_coal_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -258,13 +258,13 @@ pm_work_drones_coal = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_electricity_add = 15
-			goods_input_computers_add = 5
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			goods_output_coal_add = 45
+			goods_output_coal_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -457,12 +457,12 @@ pm_power_tools_iron = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 40
+			goods_input_electricity_add = 35
 			# output goods
-			building_output_iron_add = 45
+			goods_output_iron_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -480,13 +480,13 @@ pm_robotics_integrated_manufacturing_iron = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_electronics_add = 15
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_iron_add = 75
+			goods_output_iron_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -504,13 +504,13 @@ pm_computer_analyzed_mining_iron = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 10
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_iron_add = 105
+			goods_output_iron_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -528,13 +528,13 @@ pm_work_drones_iron = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 15
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_iron_add = 140
+			goods_output_iron_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -727,12 +727,12 @@ pm_power_tools_copper = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 40
+			goods_input_electricity_add = 35
 			# output goods
-			building_output_copper_add = 45
+			goods_output_copper_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -750,13 +750,13 @@ pm_robotics_integrated_manufacturing_copper = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_electronics_add = 15
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_copper_add = 75
+			goods_output_copper_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -774,13 +774,13 @@ pm_computer_analyzed_mining_copper = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_copper_add = 105
+			goods_output_copper_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -798,13 +798,13 @@ pm_work_drones_copper = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_copper_add = 140
+			goods_output_copper_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -997,12 +997,12 @@ pm_power_tools_rare_earth_elements = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 30 #10
+			goods_input_electricity_add = 35 #10
 			# output goods
-			building_output_rare_earth_elements_add = 45
+			goods_output_rare_earth_elements_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 1500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -1020,10 +1020,10 @@ pm_robotics_integrated_manufacturing_rare_earth_elements = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 30
-			building_input_electronics_add = 15
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_rare_earth_elements_add = 75
+			goods_output_rare_earth_elements_add = 100
 		}
 		level_scaled = {
 			building_employment_engineers_add = 1500
@@ -1044,13 +1044,13 @@ pm_computer_analyzed_mining_rare_earth_elements = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 30
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_rare_earth_elements_add = 105
+			goods_output_rare_earth_elements_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 1500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -1068,13 +1068,13 @@ pm_work_drones_rare_earth_elements = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 30
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_rare_earth_elements_add = 135
+			goods_output_rare_earth_elements_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 1500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -1267,12 +1267,12 @@ pm_power_tools_bauxite = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 40 #10
+			goods_input_electricity_add = 35
 			# output goods
-			building_output_bauxite_add = 45 #15
+			goods_output_bauxite_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -1290,13 +1290,13 @@ pm_robotics_integrated_manufacturing_bauxite = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50 #
-			building_input_electronics_add = 15 #5
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_bauxite_add = 75
+			goods_output_bauxite_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -1314,13 +1314,13 @@ pm_computer_analyzed_mining_bauxite = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_bauxite_add = 105
+			goods_output_bauxite_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -1338,13 +1338,13 @@ pm_work_drones_bauxite = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_bauxite_add = 140
+			goods_output_bauxite_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -1807,12 +1807,12 @@ pm_power_tools_lead = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 40
+			goods_input_electricity_add = 35
 			# output goods
-			building_output_lead_add = 45
+			goods_output_lead_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -1830,13 +1830,13 @@ pm_robotics_integrated_manufacturing_lead = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_electronics_add = `5
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_lead_add = 75
+			goods_output_lead_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -1854,13 +1854,13 @@ pm_computer_analyzed_mining_lead = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_lead_add = 105
+			goods_output_lead_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -1878,13 +1878,13 @@ pm_work_drones_lead = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_lead_add = 140
+			goods_output_lead_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
@@ -2076,12 +2076,12 @@ pm_power_tools_phosphorus = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 40
+			goods_input_electricity_add = 35
 			# output goods
-			building_output_phosphorus_add = 45
+			goods_output_phosphorus_add = 50
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1000
 		}
 	}
 }
@@ -2099,13 +2099,13 @@ pm_robotics_integrated_manufacturing_phosphorus = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_electronics_add = 15
+			goods_input_electricity_add = 50
+			goods_input_electronics_add = 15
 			# output goods
-			building_output_phosphorus_add = 75
+			goods_output_phosphorus_add = 100
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 1500
 		}
 	}
 }
@@ -2123,13 +2123,13 @@ pm_computer_analyzed_mining_phosphorus = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 80
+			goods_input_computers_add = 15
 			# output goods
-			building_output_phosphorus_add = 105
+			goods_output_phosphorus_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2000
 		}
 	}
 }
@@ -2147,13 +2147,13 @@ pm_work_drones_phosphorus = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			building_input_electricity_add = 50
-			building_input_computers_add = 15
+			goods_input_electricity_add = 100
+			goods_input_computers_add = 25
 			# output goods
-			building_output_phosphorus_add = 140
+			goods_output_phosphorus_add = 400
 		}
 		level_scaled = {
-			building_employment_engineers_add = 500
+			building_employment_engineers_add = 2500
 		}
 	}
 }
