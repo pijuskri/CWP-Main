@@ -349,6 +349,24 @@ state_building_slums_max_level_add = {
 	decimals = 0
 }
 
+state_building_military_research_facility_max_level_add = {
+	color = good
+	percent = no
+	decimals = 0
+}
+
+state_building_humanities_research_facility_max_level_add = {
+	color = good
+	percent = no
+	decimals = 0
+}
+
+state_building_science_research_facility_max_level_add = {
+	color = good
+	percent = no
+	decimals = 0
+}
+
 state_natural_disaster_chance_mult = {
 	color = bad
 	percent = yes

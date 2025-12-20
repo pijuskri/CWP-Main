@@ -106,7 +106,7 @@ building_nuclear_research_facility = {
 }
 
 building_military_research_facility = {
-	building_group = bg_military_research
+	building_group = bg_government
 	has_max_level = yes
 	icon ="gfx/interface/icons/building_icons/military_research_facility.dds"
 	unlocking_technologies = {
@@ -114,10 +114,11 @@ building_military_research_facility = {
 	}
 	levels_per_mesh = 5
 	can_build_government = {
-		any_scope_building = {
-			is_building_type = building_urban_center
-			level >= 20
-		}
+		#any_scope_building = {
+		#	is_building_type = building_urban_center
+		#	level >= 20
+		#}
+		always = yes
 	}
 	production_method_groups = {
 		pmg_base_military_research_facility
@@ -130,19 +131,14 @@ building_military_research_facility = {
 }
 
 building_humanities_research_facility = {
-	building_group = bg_humanities_research
-	has_max_level = yes
+	building_group = bg_government
+	#has_max_level = yes
 	icon ="gfx/interface/icons/building_icons/humanities_research_facility.dds"
-	unlocking_technologies = {
-		humanities_research_facilities
-	}
+	#unlocking_technologies = {
+	#	humanities_research_facilities
+	#}
 	levels_per_mesh = 5
-	can_build_government = {
-		any_scope_building = {
-			is_building_type = building_urban_center
-			level >= 20
-		}
-	}
+
 	production_method_groups = {
 		pmg_base_humanities_research_facility
 	}
@@ -154,7 +150,7 @@ building_humanities_research_facility = {
 }
 
 building_science_research_facility = {
-	building_group = bg_humanities_research
+	building_group = bg_government
 	has_max_level = yes
 	icon ="gfx/interface/icons/building_icons/humanities_research_facility.dds"
 	unlocking_technologies = {
@@ -162,10 +158,11 @@ building_science_research_facility = {
 	}
 	levels_per_mesh = 5
 	can_build_government = {
-		any_scope_building = {
-			is_building_type = building_urban_center
-			level >= 20
-		}
+		#any_scope_building = {
+		#	is_building_type = building_urban_center
+		#	level >= 20
+		#}
+		always = yes
 	}
 	production_method_groups = {
 		pmg_base_science_research_facility
