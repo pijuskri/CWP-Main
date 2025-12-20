@@ -1,4 +1,4 @@
-﻿####################### Urban Centers #######################
+####################### Urban Centers #######################
 pm_informal_cities = {
 	texture = "gfx/interface/icons/production_method_icons/urban/market_stalls.dds"
 	city_lights_color_index = 0	# set in defines/cwp_graphics.txt
@@ -29,6 +29,14 @@ pm_industrial_cities = {
 			building_employment_clerks_add = 5000
 		}
 	}
+	state_modifiers = {
+		level_scaled = {
+			state_building_housing_max_level_add = 1.2
+			state_building_military_research_facility_max_level_add = 0.02
+			state_building_science_research_facility_max_level_add = 0.02
+			state_building_humanities_research_facility_max_level_add = 0.02
+		}
+	}
 }
 
 pm_modernist_cities = {
@@ -44,6 +52,14 @@ pm_modernist_cities = {
 		level_scaled = {
 			building_employment_laborers_add = 3000
 			building_employment_clerks_add = 6500
+		}
+	}
+	state_modifiers = {
+		level_scaled = {
+			state_building_housing_max_level_add = 1.4
+			state_building_military_research_facility_max_level_add = 0.025
+			state_building_science_research_facility_max_level_add = 0.025
+			state_building_humanities_research_facility_max_level_add = 0.025
 		}
 	}
 }
@@ -63,6 +79,14 @@ pm_neo_traditional_cities = {
 			building_employment_clerks_add = 7500
 		}
 	}
+	state_modifiers = {
+		level_scaled = {
+			state_building_housing_max_level_add = 1.6
+			state_building_military_research_facility_max_level_add = 0.03
+			state_building_science_research_facility_max_level_add = 0.03
+			state_building_humanities_research_facility_max_level_add = 0.03
+		}
+	}
 }
 
 pm_sustainable_cities = {
@@ -79,6 +103,14 @@ pm_sustainable_cities = {
 			building_employment_laborers_add = 2000
 			building_employment_clerks_add = 6500
 			#5600+2000+900=8500
+		}
+	}
+	state_modifiers = {
+		level_scaled = {
+			state_building_housing_max_level_add = 1.8
+			state_building_military_research_facility_max_level_add = 0.035
+			state_building_science_research_facility_max_level_add = 0.035
+			state_building_humanities_research_facility_max_level_add = 0.35
 		}
 	}
 }

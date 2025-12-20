@@ -1,4 +1,4 @@
-﻿############### PORTS ###############
+############### PORTS ###############
 ##### Base Port PMG
 pm_anchorage = {
 	texture = "gfx/interface/icons/production_method_icons/other/anchorage.dds"
@@ -655,16 +655,16 @@ pm_military_research_facility = {
 	texture = "gfx/interface/icons/production_method_icons/government/scholastic_education.dds"
 	country_modifiers = {
 		workforce_scaled = {
-			country_military_tech_research_speed_mult = 0.2
+			country_military_tech_research_speed_mult = 0.05
 		}
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 20
-			goods_input_computers_add = 50
+			goods_input_paper_add = 100
+			goods_input_computers_add = 200
 		}
 		level_scaled = {
-			building_employment_officers_add = 10000
+			building_employment_officers_add = 15000
 			building_employment_engineers_add = 5000
 		}
 	}
@@ -676,17 +676,17 @@ pm_humanities_research_facility = {
 	texture = "gfx/interface/icons/production_method_icons/government/scholastic_education.dds"
 	country_modifiers = {
 		workforce_scaled = {
-			country_society_tech_research_speed_mult = 0.2
+			country_society_tech_research_speed_mult = 0.05
 		}
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 20
-			goods_input_computers_add = 50
+			goods_input_paper_add = 100
+			goods_input_computers_add = 200
 		}
 		level_scaled = {
-			building_employment_clerks_add = 10000
-			building_employment_engineers_add = 5000
+			building_employment_engineers_add = 15000
+			building_employment_clericals_add = 1000
 		}
 	}
 }
@@ -696,17 +696,16 @@ pm_science_research_facility = {
 	texture = "gfx/interface/icons/production_method_icons/government/scholastic_education.dds"
 	country_modifiers = {
 		workforce_scaled = {
-			country_production_tech_research_speed_mult = 0.2
+			country_production_tech_research_speed_mult = 0.05
 		}
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 20
-			goods_input_computers_add = 50
+			goods_input_paper_add = 100
+			goods_input_computers_add = 200
 		}
 		level_scaled = {
-			building_employment_engineers_add = 10000
-			building_employment_engineers_add = 3000
+			building_employment_engineers_add = 20000
 		}
 	}
 }

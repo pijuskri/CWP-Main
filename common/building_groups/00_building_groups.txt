@@ -461,14 +461,22 @@ bg_bureaucracy = {
 
 bg_nuclear_research = {
 	parent_group = bg_research_institutes
+	category = development
 }
 
 bg_military_research = {
 	parent_group = bg_research_institutes
+	category = development
 }
 
 bg_humanities_research = {
-	parent_group = bg_research_institutes
+	category = development
+	is_government_funded = yes
+	economy_of_scale = yes
+	lens = government
+	urbanization = 20
+	infrastructure_usage_per_level = 1
+	economy_of_scale_ai_factor = 2
 }
 
 bg_military_headquarters = {
