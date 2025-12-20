@@ -114,7 +114,7 @@ STATE_ALASKA = {
     arable_resources = { bg_livestock_ranches }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 7
+        undiscovered_amount = 14
     }
     resource = {
         type = bg_natural_gas_well
@@ -175,7 +175,7 @@ STATE_OREGON = {
     arable_resources = { bg_wheat_farms bg_livestock_ranches }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 2
     }
     resource = {
         type = bg_natural_gas_well
@@ -211,7 +211,7 @@ STATE_CANYON_STATES = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 6
     }
     resource = {
         type = bg_natural_gas_well
@@ -295,7 +295,7 @@ STATE_GREAT_PLAINS = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 2
     }
     resource = {
         type = bg_oil_rig
@@ -335,7 +335,7 @@ STATE_OZARK_PLATEAU = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 2
     }
 }
 
@@ -477,7 +477,7 @@ STATE_CUMBERLAND_PLATEAU = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 5
+        undiscovered_amount = 10
     }
     resource = {
         type = bg_oil_rig
@@ -555,7 +555,7 @@ STATE_FLORIDA = {
     arable_resources = { bg_maize_farms bg_livestock_ranches bg_cotton_plantations bg_sugar_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 4
+        undiscovered_amount = 8
     }
     resource = {
         type = bg_oil_rig
@@ -583,7 +583,7 @@ STATE_GEORGIA = {
     arable_resources = { bg_maize_farms bg_livestock_ranches bg_cotton_plantations bg_tobacco_plantations bg_sugar_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 4
     }
     capped_resources = {
         bg_logging = 20
@@ -807,7 +807,7 @@ STATE_NEWFOUNDLAND = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 5
     }
     capped_resources = {
         bg_iron_mining = 24
@@ -871,7 +871,7 @@ STATE_BRITISH_COLUMBIA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 4
+        undiscovered_amount = 6
     }
     resource = {
         type = bg_natural_gas_well
@@ -924,7 +924,7 @@ STATE_MANITOBA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 6
     }
     naval_exit_id = 3044
 }
@@ -958,7 +958,7 @@ STATE_NORTHWEST_TERRITORIES = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 5
     }
     resource = {
         type = bg_uranium_mining
@@ -1389,7 +1389,7 @@ STATE_OAXACA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 4
     }
     naval_exit_id = 3155
 }

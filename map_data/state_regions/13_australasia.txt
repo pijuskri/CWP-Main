@@ -12,7 +12,7 @@
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_cotton_plantations bg_tea_plantations bg_sugar_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 18
+        undiscovered_amount = 25
     }
     resource = {
         type = bg_natural_gas_well
@@ -47,7 +47,7 @@ STATE_VICTORIA = {
         bg_logging = 11
         bg_fishing = 8
         bg_gold_mining = 6
-        bg_bauxite_mining = 10
+        bg_bauxite_mining = 30
     }
     resource = {
         type = bg_uranium_mining
@@ -55,7 +55,7 @@ STATE_VICTORIA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 12
+        undiscovered_amount = 22
     }
     resource = {
         type = bg_natural_gas_well
@@ -83,7 +83,7 @@ STATE_TASMANIA = {
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_cotton_plantations bg_tea_plantations bg_sugar_plantations }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 6
     }
     capped_resources = {
         bg_iron_mining = 15
@@ -111,7 +111,7 @@ STATE_QUEENSLAND = {
     capped_resources = {
         bg_iron_mining = 45
         bg_lead_mining = 45
-        bg_copper_mining = 20
+        bg_copper_mining = 40
         bg_logging = 5
         bg_fishing = 12
         bg_bauxite_mining = 37
@@ -154,13 +154,13 @@ STATE_SOUTH_AUSTRALIA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 3
+        undiscovered_amount = 8
     }
     capped_resources = {
         bg_iron_mining = 30
         bg_lead_mining = 36
         bg_phosphorus_mining = 60
-        bg_copper_mining = 44
+        bg_copper_mining = 60
         bg_fishing = 6
     }
     naval_exit_id = 3121
@@ -179,13 +179,13 @@ STATE_WESTERN_AUSTRALIA = {
     arable_land = 436
     arable_resources = { bg_wheat_farms bg_livestock_ranches }
     capped_resources = {
-        bg_coal_mining = 40
-        bg_iron_mining = 30
-        bg_copper_mining = 20
+        bg_coal_mining = 64
+        bg_iron_mining = 40
+        bg_copper_mining = 45
         bg_logging = 4
         bg_fishing = 9
         bg_gold_mining = 8
-        bg_bauxite_mining = 42
+        bg_bauxite_mining = 50
     }
     resource = {
         type = bg_uranium_mining
@@ -193,7 +193,7 @@ STATE_WESTERN_AUSTRALIA = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 34
+        undiscovered_amount = 50
     }
     resource = {
         type = bg_natural_gas_well
@@ -225,7 +225,7 @@ STATE_NORTHERN_TERRITORY = {
     }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 2
+        undiscovered_amount = 8
     }
     resource = {
         type = bg_oil_rig
@@ -258,7 +258,7 @@ STATE_NORTH_ISLAND = {
     arable_resources = { bg_wheat_farms bg_livestock_ranches }
     resource = {
         type = bg_rare_earth_elements_mining
-        undiscovered_amount = 1
+        undiscovered_amount = 2
     }
     capped_resources = {
         bg_coal_mining = 28

@@ -1,4 +1,4 @@
-﻿# goods						The good being referenced
+# goods						The good being referenced
 # weight					The base weight that is applied to this good based on market Sell Order share
 # max_supply_share			The maximum weight that can be applied to this good based on market Sell Order share, relative supply above this amount will have no further impact on base weight
 # min_supply_share			If above 0, a minimum of this multiplier of the base weight will be applied to a good regardless of its market Sell Order share
@@ -345,6 +345,18 @@ popneed_luxury_items = {
 		weight = 0.02
 		max_supply_share = 0.05
 		min_supply_share = 0.0
+	}
+	entry = {
+		goods = luxury_cars
+		weight = 3
+		max_weight = 2		# Maxes out at 80% of supply share
+		min_weight = 0
+	}
+	entry = {
+		goods = household_appliances
+		weight = 1
+		max_weight = 4		# Maxes out at 80% of supply share
+		min_weight = 0
 	}
 	entry = {
 		goods = consumer_electronics

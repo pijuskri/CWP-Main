@@ -1,4 +1,4 @@
-﻿je_government_petition = {
+je_government_petition = {
     icon = "gfx/interface/icons/event_icons/event_scales.dds"
 
 	group = je_group_internal_affairs
@@ -120,7 +120,7 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        days = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = {
                             add = 1.5
@@ -134,7 +134,7 @@
                 else = {
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        days = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = {
                             add = 1
@@ -155,7 +155,7 @@
                     }
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        days = long_modifier_time
+                        months = 24
                         is_decaying = yes
                         multiplier = 1.5
                     }
@@ -163,7 +163,7 @@
                 else = {
                     add_modifier = {
                         name = modifier_failed_to_meet_petition
-                        days = long_modifier_time
+                        months = 24
                         is_decaying = yes
                     }
                 }
