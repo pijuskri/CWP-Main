@@ -2,8 +2,8 @@ NDiplomacy = {
 	DEFAULT_TRUCE_MONTHS = 36#60
 }
 NEconomy = {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 60
-	MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 30
+	#MAX_WEEKLY_CONSTRUCTION_PROGRESS = 60
+	#MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 30 -no longer functional
 	#FIRED_POP_RADICALIZATION_BASE_FRACTION = 0.1		# This percentage of a pop becomes radicalized when they lose their job, for instance due to a building being downsized
 	
 	#PRICE_RANGE = 0.95							# min price of a good is base * (1 - PRICE_RANGE), Max price is base * (1 + PRICE_RANGE), PRICE_RANGE is locked to [0-1]
